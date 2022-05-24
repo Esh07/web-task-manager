@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendar - Task Manager</title>
+    <!-- meta tags for SEO
+     -->
+    <meta name="keywords" content="html, css, javascripts, task manager " />
+    <meta name="author" content="Eshvar Prakash">
+    <meta name="copyright" content="Eshvar Prakash">
+    <meta name="robots" content="index, follow" />
+
+    <meta name="msapplication-TileColor" content="#161616">
+    <!-- mete tag for theme-color -->
+    <meta name="theme-color" content="#161616" />
+    <!-- //Fontsawesome icons cdn -->
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.1.1/css/all.css">
+
+
+    <!-- MDB -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.0.0/mdb.min.js"></script>
+
+    <!-- // Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- //Boostrap js bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- //Jquery CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.0.0/mdb.min.css" rel="stylesheet" />
+
+    <!-- custiome css -->
+    <link rel="stylesheet" href="assests/css/style.css">
+</head>
+
+<body>
+
+    <header class="page-header overflow-hidden">
+        <div class="header-container">
+            <nav class="navigation-bar">
+                <div class="nav-container">
+                    <div class="nav-content d-flex justify-content-between align-items-center">
+                        <div class="nav-profile d-flex justify-content-between align-items-center flex-row ms-5 gap-5">
+                            <div class="profile-name-setting-container d-flex justify-content-center align-items-center me-4 gap-4">
+                                <div class="profile-icon-container rounded-circle d-flex justify-content-center align-items-center">
+                                    <div class="profile-icon-content">
+                                        <i class="fa-solid fa-user fs-1"></i>
+                                    </div>
+                                </div>
+                                <div class="profile-name-container d-flex flex-column text-dark">
+                                    <span class="fs-3 fw-light">Eshvar Prakash</span>
+                                    <div class="profile-setting-container d-flex align-items-center gap-2">
+                                        <i class="fa-light fs-5 fa-cog"></i>
+                                        <span class="profile-setting-text fs-6 fw-lighter">Account settings</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="notification-icon-container">
+                                <i class="fa-light fs-3 fa-bell"></i>
+                            </div>
+                        </div>
+                        <div class="nav-links text-reset text-dark">
+                            <ul class="d-flex list-unstyled w-100">
+                                <li class="p-5 ">
+                                    <a href="index.html">
+                                    <div class="nav-link-container d-flex align-items-center gap-3 fs-5">
+                                        
+                                        <div class="nav-link-icon-content">
+                                            <i class="fa-light fs-2 fa-grid-horizontal"></i>
+                                        </div>
+                                        <!-- fontawesome dashbaord icon -->
+                                        <div class="nav-link-text-content fw-light">
+                                          Dashbaord
+                                        </div>
+                                    </div>
+                                    </a>
+
+                                </li>
+                                <li class="p-5 ">
+                                    <a href="task.html">
+                                    <div class="nav-link-container d-flex align-items-center gap-3 fs-5">
+                                        <div class="nav-link-icon-content">
+                                            <i class="fa-light fs-2 fa-list-check"></i>
+                                        </div>
+                                        <!-- fontawesome dashbaord icon -->
+                                        <div class="nav-link-text-content fw-regular">
+                                            Task
+                                        </div>
+                                    </div>
+                                </a>
+                                </li>
+                                <li class="p-5 nav-link-active">
+                                    <a href="calendar.html">
+                                    <div class="nav-link-container d-flex align-items-center gap-3 fs-5">
+                                        <div class="nav-link-icon-content">
+                                            <i class="fa-solid fs-2 fa-calendar-days"></i>
+                                        </div>
+                                        <!-- fontawesome dashbaord icon -->
+                                        <div class="nav-link-text-content fw-light">
+                                            Calendar
+                                        </div>
+                                    </div>
+                                </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <main class="main-content-container d-flex flex-column mx-5 gap-3">
+        <!-- a section for greeting and page heading -->
+        <section class="greeting-section text-dark py-1 my-2 d-flex align-items-center justify-content-center">
+            <div class="greeting-container">
+                <div class="greeting-content text-center ">
+                    <span class="greeting-text fw-bold fs-2 text-uppercase">Calendar</span>
+                </div>
+            </div>
+        </section>
+
+
+        <div class="calendar-container my-4">
+
+            <div class="calendar-content">
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="big-calendar-container">
+                            <div class="big-calendar-head-content d-flex flex-column gap-2">
+                                <div class="task-calendar-with-arrows-container">
+                                    <div
+                                        class="calendar-with-arrow-content d-flex justify-content-center align-items-center gap-3 text-dark ">
+                                        <!-- left sided arrow  -->
+                                        <div class="calendar-with-arrow-left-content">
+                                            <i class="fa-solid fs-3 fa-chevron-left"></i>
+                                        </div>
+                                        <!-- 11 March 2020 in caps -->
+                                        <div class="calendar-with-arrow-date-content">
+                                            <span class="calendar-with-arrow-date-text fw-lighter fs-6 text-uppercase">
+                                                11 MARCH 2020
+                                            </span>
+                                        </div>
+                                        <!-- right sided arrow  -->
+                                        <div class="calendar-with-arrow-right-content">
+                                            <i class="fa-solid fs-3 fa-chevron-right"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="big-calendar-main-content d-flex flex-column align-items-center w-100">
+                                    <div class="big-calendar-row w-100 text-dark">
+                                        <div class="big-calendar-columns d-flex fw-bolder">
+                                            <div class="big-calendar-column-content">
+                                                <span>Mon</span>
+                                            </div>
+                                            <div class="big-calendar-column-content">
+                                                <span>Tue</span>
+                                            </div>
+                                            <div class="big-calendar-column-content">
+                                                <span>Wed</span>
+                                            </div>
+                                            <div class="big-calendar-column-content">
+                                                <span>Thu</span>
+                                            </div>
+                                            <div class="big-calendar-column-content">
+                                                <span>Fri</span>
+                                            </div>
+                                            <div class="big-calendar-column-content">
+                                                <span>Sat</span>
+                                            </div>
+                                            <div class="big-calendar-column-content">
+                                                <span>Sun</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="big-calendar-date w-100 ">
+                                        <div class="big-calendar-row w-100">
+                                            <div class="big-calendar-columns d-flex">
+                                                <div class="big-calendar-column-content">
+                                                    <span></span>
+                                                </div>
+                                                <div class="big-calendar-column-content">
+                                                    <span>1</span>
+                                                </div>
+                                                <div class="big-calendar-column-content">
+                                                    <span>2</span>
+                                                </div>
+                                                <div class="big-calendar-column-content">
+                                                    <span>3</span>
+                                                </div>
+                                                <div class="big-calendar-column-content">
+                                                    <span>4</span>
+                                                </div>
+                                                <div class="big-calendar-column-content">
+                                                    <span>5</span>
+                                                </div>
+                                                <div class="big-calendar-column-content">
+                                                    <span>6</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="big-calendar-row w-100">
+                                            <div class="big-calendar-columns d-flex">
+                                                <div class="big-calendar-column-content">
+                                                    <span>7</span>
+                                                </div>
+                                                <div class="big-calendar-column-content">
+                                                    <span>8</span>
+                                                </div>
+                                                <div class="big-calendar-column-content">
+                                                    <span>9</span>
+                                                </div>
+                                                <div class="big-calendar-column-content">
+                                                    <span>10</span>
+                                                </div>
+                                                <div class="big-calendar-column-content">
+                                                    <span>11</span>
+                                                </div>
+                                                <div class="big-calendar-column-content">
+                                                    <span>12</span>
+                                                </div>
+                                                <div class="big-calendar-column-content">
+                                                    <span>13</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="big-calendar-row w-100">
+                                            <div class="big-calendar-columns d-flex">
+                                                <div class="big-calendar-column-content">
+                                                    <span>14</span>
+                                                </div>
+                                                <div class="big-calendar-column-content">
+                                                    <span>15</span>
+                                                </div>
+                                                <div class="big-calendar-column-content">
+                                                    <span>16</span>
+                                                </div>
+                                                <div class="big-calendar-column-content">
+                                                    <span>17</span>
+                                                </div>
+                                                <div class="big-calendar-column-content">
+                                                    <span>18</span>
+                                                </div>
+                                                <div class="big-calendar-column-content">
+                                                    <span>19</span>
+                                                </div>
+                                                <div class="big-calendar-column-content">
+                                                    <span>20</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="big-calendar-row w-100">
+                                            <div class="big-calendar-columns d-flex">
+                                                <div class="big-calendar-column-content">
+                                                    <span>21</span>
+                                                </div>
+                                                <div class="big-calendar-column-content">
+                                                    <span>22</span>
+                                                </div>
+                                                <div class="big-calendar-column-content">
+                                                    <span>23</span>
+                                                </div>
+                                                <div class="big-calendar-column-content">
+                                                    <span>24</span>
+                                                </div>
+                                                <div class="big-calendar-column-content">
+                                                    <span>25</span>
+                                                </div>
+                                                <div class="big-calendar-column-content">
+                                                    <span>26</span>
+                                                </div>
+                                                <div class="big-calendar-column-content">
+                                                    <span>27</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="big-calendar-row w-100 ">
+                                            <div class="big-calendar-columns d-flex">
+                                                <div class="big-calendar-column-content">
+                                                    <span>28</span>
+                                                </div>
+                                                <div class="big-calendar-column-content">
+                                                    <span>29</span>
+                                                </div>
+                                                <div class="big-calendar-column-content">
+                                                    <span>30</span>
+                                                </div>
+                                                <div class="big-calendar-column-content">
+                                                    <span>31</span>
+                                                </div>
+                                                <div class="big-calendar-column-content">
+                                                    <span></span>
+                                                </div>
+                                                <div class="big-calendar-column-content">
+                                                    <span></span>
+                                                </div>
+                                                <div class="big-calendar-column-content">
+                                                    <span></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="calendar-today-list-of-tasks-container my-3 mx-5 calendar-today-list-of-tasks-left-side-container h-100 py-3">
+                            <div class="calendar-today-lis-of-tasks-content">
+                                <div class="calendar-today-head-container d-flex justify-content-center align-items-center py-3">
+                                    <div class="calendar-today-head-content fs-4 text-dark fw-bolder">
+                                        <span>11 MARCH 2022</span>
+                                    </div>
+                                </div>
+
+                                <div class="calendar-today-list-container">
+                                    <ul class="calendar-today-lists-content px-5 py-3 list-unstyled text-dark d-flex flex-column gap-4">
+                                        <li class="calendar-today-list-item-content px-2">
+                                            <div class="calendar-today-list-item d-flex fs-6 flex-column">
+                                                <span class="task-time p-0 m-0  fs-6">
+                                                    09:00
+                                                </span>
+                                                <span class="task-title fs-5 my-1 fw-regular text-uppercase">
+                                                    UI Lecture
+                                                </span>
+                                                <span class="task-category fs-6">
+                                                    Category
+                                                </span>
+                                            </div>
+                                        </li>
+
+                                        <li class="calendar-today-list-item-content px-2">
+                                            <div class="calendar-today-list-item d-flex fs-6 flex-column">
+                                                <span class="task-time p-0 m-0  fs-6">
+                                                    09:00
+                                                </span>
+                                                <span class="task-title fs-5 my-1 fw-regular text-uppercase">
+                                                    UI Lecture
+                                                </span>
+                                                <span class="task-category fs-6">
+                                                    Category
+                                                </span>
+                                            </div>
+                                        </li>
+
+                                        <li class="calendar-today-list-item-content px-2">
+                                            <div class="calendar-today-list-item d-flex fs-6 flex-column">
+                                                <span class="task-time p-0 m-0  fs-6">
+                                                    09:00
+                                                </span>
+                                                <span class="task-title fs-5 my-1 fw-regular text-uppercase">
+                                                    UI Lecture
+                                                </span>
+                                                <span class="task-category fs-6">
+                                                    Category
+                                                </span>
+                                            </div>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    
+
+
+
+</body>
+
+</html>

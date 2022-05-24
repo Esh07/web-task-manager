@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create profile - Task Manager</title>
+    <!-- meta tags for SEO
+     -->
+    <meta name="keywords" content="html, css, javascripts, task manager " />
+    <meta name="author" content="Eshvar Prakash">
+    <meta name="copyright" content="Eshvar Prakash">
+    <meta name="robots" content="index, follow" />
+
+    <meta name="msapplication-TileColor" content="#161616">
+    <!-- mete tag for theme-color -->
+    <meta name="theme-color" content="#161616" />
+    <!-- //Fontsawesome icons cdn -->
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.1.1/css/all.css">
+
+    <!-- // Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- //Boostrap js bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <!-- //Jquery CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <!-- custiome css -->
+    <link rel="stylesheet" href="assests/css/style.css">
+</head>
+
+<body id="create-page" class="d-flex justify-content-center">
+    <div class="page-container">
+        <main class="main-content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-md-2 col-xl ">
+                        <div class="card">
+                            <div class="card-container w-100 h-100 d-flex flex-colum flex-column justify-content-center align-items-center ">
+                                <div class="card-header mb-3 border-bottom-0 bg-white ">
+                                    <h1 class="text-center fw-bolder fs-2">Create profile</h1>
+                                </div>
+                                <div class="card-body">
+                                    <form action="#" method="POST" class="d-flex justify-content-between align-items-center flex-column gap-5">
+                                        <div class="profile-photo-name-container d-flex flex-column align-items-center gap-4">
+                                            <div class="form-group">
+                                                <div class="profile-photo-container d-flex justify-content-center align-items-center flex-column ">
+                                                    <div class="profile-photo-content position-relative">
+                                                        <div class="profile-photo-icon profile-dark-color bg-profile rounded-circle ">
+                                                            <i class="fa-duotone fa-fw fa-user"></i>
+                                                        </div>
+                                                        <div class="profile-dropdown-links position-absolute top-50 start-100 translate-middle bottom-100">
+                                                            <div class="profile-upload-icon-container d-inline-block pe-4 pt-3">
+                                                                <div class="profile-upload-icon-content text-center rounded-circle  text-light bg-dark">
+                                                                    <i class="fas fa-fw fa-caret-down"></i>
+                                                                </div>
+                                                                
+                                                            </div>
+                                                            <!-- <ul class="profile-links-options list-unstyled ps-4">
+                                                                <li class="profile-link p-1 bg-light text-dark">
+                                                                    <div class="profile-link-content d-flex align-items-center gap-1">
+                                                                        <i class="fas fa-caret-down"></i>
+                                                                        <span class="profile-link-text">
+                                                                          Upload 
+                                                                        </span> 
+                                                                    </div>
+                                                                    
+                                                                </li>
+                                                            </ul> -->
+                                                        </div>
+                                                    </div>
+         
+                                                    <!-- <input type="file" name="avatar" id="avatar" class="form-control" > -->
+                                                </div>
+                                                
+                                            </div>
+                                            <div class="name-content d-flex justify-content-between gap-5">
+                                                <div class="form-group text-dark flex-column gap-1">
+                                                    <label class="text-dark fw-bold" for="f-name">Firstname</label>
+                                                    <input type="text" name="f-name" id="f-name" class="form-control input-box"
+                                                        placeholder="Enter firstname" required>
+                                                </div>
+                                                <div class="form-group d-flex flex-column gap-1">
+                                                    <label class="text-dark fw-bold" for="s-name">Surname</label>
+                                                    <input type="text" name="s-name" id="s-name" class="form-control input-box"
+                                                        placeholder="Enter your email" required>
+                                                </div>
+                                            </div>
+                                        </div>
+    
+                                        <div class="form-group d-flex justify-content-center gap-4 ">
+                                            <div class="individual-btn-container">
+                                                <button type="reset" class="btn btn-outline-primary text-uppercase btn-block">Reset</button>
+                                            </div>
+                                            <div class="individual-btn-container">
+                                            <button type=" submit" class="btn btn-primary btn-block text-uppercase" onclick="">Create</button>
+
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+    </div>
+</body>
+
+</html>
