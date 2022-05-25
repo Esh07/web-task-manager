@@ -74,7 +74,63 @@ $(document).ready(function () {
     );
 
 
+    var taskList = JSON.parse(localStorage.getItem("taskList"));
 
+    if (taskList.length > 0) {
+        for (let i = 0; i < taskList.length; i++) {
+            var taskTitle = taskList[i].taskTitle;
+            var startTime = taskList[i].startTime;
+            var category = taskList[i].category;
+
+            var individualTaskItem = `<li class="work-tab-task-item">
+                                        <div class="work-tab-task-item-content row ">
+                                            <div class="work-task-item-left-content col-md-4 d-flex justify-content-evenly align-items-center">
+                                                <div class="work-task-item-icon-container">
+                                                    <!-- checkbox icon -->
+                                                    <!-- <i class="fas fa-check-circle"></i>
+                                                     -->
+                                                     <div class="work-task-item-icon-content">
+                                                         <div class="container work-task-item-icon-custom-content">
+                                                             <input id="task-`+ i + `" type="checkbox" class="work-task-item-checkbox" />
+                                                             <label for="task-`+ i + `" class="custome-check-box"></label>
+                                                         </div>
+                                                     </div>
+                                                </div>
+                                                <div class="work-task-item-time-container">
+                                                    <span class="work-task-item-time fs-5">`+ startTime + `</span>
+                                                </div>
+                                            </div>
+                                            <div class="work-task-item-right-content col-md-8 d-flex  justify-content-between align-items-center px-3 py-1">
+                                                <div class="work-task-item-category-title-container d-flex flex-column align-items-start">
+                                                <div class="work-task-item-category-container">
+                                                    <span class="work-task-item-category fw-lighter fs-6">`+ category + `</span>
+                                                </div>
+                                                <div class="work-task-item-title-container">
+                                                    <span class="work-task-item-title fs-4">`+ taskTitle + `</span>
+                                                </div>
+                                            </div>
+
+                                                <!-- edit and delete icon by default display none -->
+                                                <div class="work-task-item-edit-and-delete-container d-flex gap-4 justify-content-end pe-2">
+                                                    <div class="work-task-item-edit-container ">
+                                                        <!-- anchor tag with id editIcon id with value delete icon -->
+                                                        <a href="#" id="editIcon" class="work-task-item-edit-icon fs-4 text-dark" data-toggle="modal" data-target="#editTaskModal">
+                                                            <i class="fa-light fa-pen-to-square"></i>
+                                                        </a>
+                                                    </div>
+                                                    <div class="work-task-item-delete-container">
+                                                        <!-- anchor tag with id deleteIcon id with value delete icon -->
+                                                        <a href="#" id="deleteIcon" class="work-task-item-delete-icon fs-4 text-dark" data-toggle="modal" data-target="#deleteTaskModal">
+                                                            <i class="fa-light fa-trash-can"></i>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>`
+            $(".work-tab-list-of-task-items").append(individualTaskItem);
+        }
+    }
 
     //listen to click createTaskBtn and create task in local storage
     $("#createTaskBtn").on("click", function (event) {
@@ -387,66 +443,6 @@ $(document).ready(function () {
     });
 
 
-
-
-
-    var taskList = JSON.parse(localStorage.getItem("taskList"));
-
-    if (taskList.length > 0) {
-        for (let i = 0; i < taskList.length; i++) {
-            var taskTitle = taskList[i].taskTitle;
-            var startTime = taskList[i].startTime;
-            var category = taskList[i].category;
-
-            var individualTaskItem = `<li class="work-tab-task-item">
-                                        <div class="work-tab-task-item-content row ">
-                                            <div class="work-task-item-left-content col-md-4 d-flex justify-content-evenly align-items-center">
-                                                <div class="work-task-item-icon-container">
-                                                    <!-- checkbox icon -->
-                                                    <!-- <i class="fas fa-check-circle"></i>
-                                                     -->
-                                                     <div class="work-task-item-icon-content">
-                                                         <div class="container work-task-item-icon-custom-content">
-                                                             <input id="task-`+ i + `" type="checkbox" class="work-task-item-checkbox" />
-                                                             <label for="task-`+ i + `" class="custome-check-box"></label>
-                                                         </div>
-                                                     </div>
-                                                </div>
-                                                <div class="work-task-item-time-container">
-                                                    <span class="work-task-item-time fs-5">`+ startTime + `</span>
-                                                </div>
-                                            </div>
-                                            <div class="work-task-item-right-content col-md-8 d-flex  justify-content-between align-items-center px-3 py-1">
-                                                <div class="work-task-item-category-title-container d-flex flex-column align-items-start">
-                                                <div class="work-task-item-category-container">
-                                                    <span class="work-task-item-category fw-lighter fs-6">`+ category + `</span>
-                                                </div>
-                                                <div class="work-task-item-title-container">
-                                                    <span class="work-task-item-title fs-4">`+ taskTitle + `</span>
-                                                </div>
-                                            </div>
-
-                                                <!-- edit and delete icon by default display none -->
-                                                <div class="work-task-item-edit-and-delete-container d-flex gap-4 justify-content-end pe-2">
-                                                    <div class="work-task-item-edit-container ">
-                                                        <!-- anchor tag with id editIcon id with value delete icon -->
-                                                        <a href="#" id="editIcon" class="work-task-item-edit-icon fs-4 text-dark" data-toggle="modal" data-target="#editTaskModal">
-                                                            <i class="fa-light fa-pen-to-square"></i>
-                                                        </a>
-                                                    </div>
-                                                    <div class="work-task-item-delete-container">
-                                                        <!-- anchor tag with id deleteIcon id with value delete icon -->
-                                                        <a href="#" id="deleteIcon" class="work-task-item-delete-icon fs-4 text-dark" data-toggle="modal" data-target="#deleteTaskModal">
-                                                            <i class="fa-light fa-trash-can"></i>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>`
-            $(".work-tab-list-of-task-items").append(individualTaskItem);
-        }
-    }
 
 
 
