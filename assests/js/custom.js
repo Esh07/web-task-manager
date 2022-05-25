@@ -152,6 +152,7 @@ $(document).ready(function () {
                 var taskList = [];
                 taskList.push(task);
                 localStorage.setItem("taskList", JSON.stringify(taskList));
+                location.reload();
 
             }
             // localStorage.setItem("taskList", JSON.stringify(task));
@@ -167,6 +168,7 @@ $(document).ready(function () {
             //hide form
             $("body").removeClass("overflow");
             $("#addTaskBox").addClass("hidden");
+            window.location.reload();
         }
 
         //---------------------------------------------------------------
@@ -391,5 +393,60 @@ $(document).ready(function () {
             $("#addNoteBox").addClass("hidden");
         }
     });
+
+
+
+    // click listener for accessiblity icon
+    var myModal = document.getElementById('accesiblity-icon');
+    const currentTheme = localStorage.getItem("theme");
+    // If the current theme in localStorage is "dark"...
+    const theme = document.querySelector("#theme-link");
+    if (currentTheme == "dark") {
+        // ...then use the .dark-theme class
+        theme.href = "assests/css/dark-style.css";
+
+    }
+
+
+    myModal.addEventListener("click", function (event) {
+
+        let myModalEl = document.querySelector("#accesiblity-box");
+        let modal = bootstrap.Modal.getOrCreateInstance(myModalEl);// Returns a Bootstrap modal instance
+        modal.show();
+        //togle theme
+        let themeToggle = document.querySelector("#toggleThemeSwitch");
+        // Select the stylesheet <link>
+        let themeState = "light";
+        themeToggle.addEventListener("click", function () {
+            // If the current URL contains "ligh-theme.css"
+            //toggle theme.href.toggle()
+
+            if (theme.getAttribute("href") == "") {
+                // ...then change the href to "dark-theme.css"
+                theme.href = "assests/css/dark-style.css";
+                // localStorage.setItem("theme", "dark");
+                themeState = "dark";
+            } else {
+                // ...otherwise change the href to "light-theme.css"
+                theme.href = "";
+                // localStorage.setItem("theme", "light");
+                themeState = "light";
+            }
+        }
+            , false);
+
+
+        let saveAccesiblity = document.querySelector("#saveAccesiblity");
+        saveAccesiblity.addEventListener("click", function () {
+            modal.hide();
+            localStorage.setItem("theme", themeState);
+
+        }, false);
+
+
+
+    });
+
+
 
 });

@@ -34,6 +34,9 @@
 
     <!-- custiome css -->
     <link rel="stylesheet" href="assests/css/style.css">
+
+    <link href="" rel="stylesheet" id="theme-link">
+
 </head>
 
 <body>
@@ -57,10 +60,12 @@
                                         <span class="profile-setting-text fs-6 fw-lighter">Account settings</span>
                                     </div>
                                 </div>
+
                             </div>
                             
-                            <div class="notification-icon-container">
-                                <i class="fa-light fs-3 fa-bell"></i>
+                            <div class="notification-icon-container d-flex gap-3">
+                                <i class="fa-light fs-3 fa-bell" id="notification-bell-icon"></i>
+                                <a href="#body" id="accesiblity-icon"><i class="fa-light fs-3 fa-universal-access"></i></a>
                             </div>
                         </div>
                         <div class="nav-links text-reset text-dark">
@@ -746,7 +751,52 @@
 
     </main>
 
+    <!-- accesiblity model  -->
+    <!-- Vertically centered modal -->
+    <div class="modal" tabindex="-1" id="accesiblity-box">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title fw-bold text-dark fs-4">Accessiblity setting </h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <!-- theme togle external css -->
+                <div class="modal-body-container mx-3">
+                    <div class="theme-container mx-5 d-flex justify-content-between align-items-center">
+                        <div class="theme-text-container">
+                            <span class="theme-text fs-5 fw-bold text-dark">
+                                Select theme
+                            </span>
+                        </div>
+                        <div class="theme-swtich-container" >
+                            <label class="switch">
+                                
+                                <input type="checkbox" id="toggleThemeSwitch">
+                                
+                                <span class="slider round"></span>
+                                <span class="uncheked-txt">
+                                    Light
+                                </span>
+                                <span class="checked-txt">
+                                    Dark
+                                </span>
+                              </label>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="modal-footer d-flex justify-content-center align-items-center">
+              <button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary" id="saveAccesiblity">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
 
+    <script src="assests/js/custom.js"></script>
 
 
 </body>

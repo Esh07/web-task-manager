@@ -35,10 +35,12 @@
     <!-- custiome css -->
     <link rel="stylesheet" href="assests/css/style.css">
 
+    <link href="" rel="stylesheet" id="theme-link">
+
     <!-- import custom js file -->
 </head>
 
-<body class="">
+<body class="" id="body">
 
     <header class="page-header overflow-hidden">
         <div class="header-container">
@@ -61,8 +63,9 @@
                                 </div>
                             </div>
                             
-                            <div class="notification-icon-container">
-                                <i class="fa-light fs-3 fa-bell"></i>
+                            <div class="notification-icon-container d-flex gap-3">
+                                <i class="fa-light fs-3 fa-bell" id="notification-bell-icon"></i>
+                                <a href="#body" id="accesiblity-icon"><i class="fa-light fs-3 fa-universal-access"></i></a>
                             </div>
                         </div>
                         <div class="nav-links text-reset text-dark">
@@ -161,7 +164,7 @@
                             <span class="today-text fs-5">Today</span>
                         </div>
                         <div class="task-add-btn-container">
-                            <button class="btn btn-primary btn-sm d-flex align-items-center gap-2 py-2 px-3 add-task-btn-on-menu">
+                            <a class="btn btn-primary btn-sm d-flex align-items-center gap-2 py-2 px-3 add-task-btn-on-menu" href="#body">
                                <!-- add icon and text Add task -->
                                <div class="task-add-btn-icon-container">
                                <i class="fas fa-plus"></i>
@@ -170,7 +173,7 @@
                                 <span class="add-task-text fs-6">Add Task</span>
 
                                </div>
-                            </button>
+                            </a>
                         </div>
                         
                     </div>
@@ -312,13 +315,13 @@
                                                 <div class="work-task-item-edit-and-delete-container d-flex gap-4 justify-content-end pe-2">
                                                     <div class="work-task-item-edit-container ">
                                                         <!-- anchor tag with id editIcon id with value delete icon -->
-                                                        <a href="#editIcon" id="editIcon" class="work-task-item-edit-icon fs-4 text-dark" data-toggle="modal" data-target="#editTaskModal">
+                                                        <a href="#body" id="editIcon" class="work-task-item-edit-icon fs-4 text-dark" data-toggle="modal" data-target="#editTaskModal">
                                                             <i class="fa-light fa-pen-to-square"></i>
                                                         </a>
                                                     </div>
                                                     <div class="work-task-item-delete-container">
                                                         <!-- anchor tag with id deleteIcon id with value delete icon -->
-                                                        <a href="#deleteIcon" id="deleteIcon" class="work-task-item-delete-icon fs-4 text-dark" data-toggle="modal" data-target="#deleteTaskModal">
+                                                        <a href="#body" id="deleteIcon" class="work-task-item-delete-icon fs-4 text-dark" data-toggle="modal" data-target="#deleteTaskModal">
                                                             <i class="fa-light fa-trash-can"></i>
                                                         </a>
                                                     </div>
@@ -359,13 +362,13 @@
                                                 <div class="work-task-item-edit-and-delete-container d-flex gap-4 justify-content-end pe-2">
                                                     <div class="work-task-item-edit-container ">
                                                         <!-- anchor tag with id editIcon id with value delete icon -->
-                                                        <a href="#editIcon" id="editIcon" class="work-task-item-edit-icon fs-4 text-dark" data-toggle="modal" data-target="#editTaskModal">
+                                                        <a href="#body" id="editIcon" class="work-task-item-edit-icon fs-4 text-dark" data-toggle="modal" data-target="#editTaskModal">
                                                             <i class="fa-light fa-pen-to-square"></i>
                                                         </a>
                                                     </div>
                                                     <div class="work-task-item-delete-container">
                                                         <!-- anchor tag with id deleteIcon id with value delete icon -->
-                                                        <a href="#deleteIcon" id="deleteIcon" class="work-task-item-delete-icon fs-4 text-dark" data-toggle="modal" data-target="#deleteTaskModal">
+                                                        <a href="#body" id="deleteIcon" class="work-task-item-delete-icon fs-4 text-dark" data-toggle="modal" data-target="#deleteTaskModal">
                                                             <i class="fa-light fa-trash-can"></i>
                                                         </a>
                                                     </div>
@@ -406,13 +409,13 @@
                                                 <div class="work-task-item-edit-and-delete-container d-flex gap-4 justify-content-end pe-2">
                                                     <div class="work-task-item-edit-container ">
                                                         <!-- anchor tag with id editIcon id with value delete icon -->
-                                                        <a href="#" id="editIcon" class="work-task-item-edit-icon fs-4 text-dark" data-toggle="modal" data-target="#editTaskModal">
+                                                        <a href="#body" id="editIcon" class="work-task-item-edit-icon fs-4 text-dark" data-toggle="modal" data-target="#editTaskModal">
                                                             <i class="fa-light fa-pen-to-square"></i>
                                                         </a>
                                                     </div>
                                                     <div class="work-task-item-delete-container">
                                                         <!-- anchor tag with id deleteIcon id with value delete icon -->
-                                                        <a href="#" id="deleteIcon" class="work-task-item-delete-icon fs-4 text-dark" data-toggle="modal" data-target="#deleteTaskModal">
+                                                        <a href="#body" id="deleteIcon" class="work-task-item-delete-icon fs-4 text-dark" data-toggle="modal" data-target="#deleteTaskModal">
                                                             <i class="fa-light fa-trash-can"></i>
                                                         </a>
                                                     </div>
@@ -423,7 +426,7 @@
                                 </ul>
 
                                 <div class="show-all-task-container d-flex justify-content-center align-items-center">
-                                    <a href="#" class="show-all-task-link text-dark">
+                                    <a href="task.html" class="show-all-task-link text-dark">
                                         <span class="show-all-task-text border-bottom border-dark border-2">Show all tasks</span>
                                     </a>
                                 </div>
@@ -457,12 +460,12 @@
                                                 </span>
                                                 <div class="notes-list-item-head-icons-container fs-5 d-flex gap-3">
                                                     <div class="notes-edit-icon-content">
-                                                        <a href="#editIcon" id="reminderEditIcon" class="notes-edit-icon text-dark" data-toggle="modal" data-target="#editNoteModal">
+                                                        <a href="#body" id="reminderEditIcon" class="notes-edit-icon text-dark" data-toggle="modal" data-target="#editNoteModal">
                                                             <i class="fa-light fa-pen-to-square"></i>
                                                         </a>
                                                     </div>
                                                     <div class="notes-delete-icon-content">
-                                                        <a href="#deleteIcon" id="reminderDeleteIcon" class="notes-delete-icon text-dark" data-toggle="modal" data-target="#deleteNoteModal">
+                                                        <a href="#body" id="reminderDeleteIcon" class="notes-delete-icon text-dark" data-toggle="modal" data-target="#deleteNoteModal">
                                                             <i class="fa-light fa-trash-can"></i>
                                                         </a>
                                                     </div>
@@ -490,7 +493,7 @@
                     </div>
                     
                     <div class="notes-add-note-container d-flex justify-content-center align-items-center">
-                        <a href="#" class="notes-add-note-link text-dark d-flex justify-content-between gap-2">
+                        <a href="#body" class="notes-add-note-link text-dark d-flex justify-content-between gap-2">
                             <div class="notes-add-note-link-link-icon">
                                 <i class="fa-regular fa-plus"></i>
                             </div>
@@ -537,7 +540,7 @@
                             </div>
 
                             <div class="small-calendar-add-task-btn-content d-flex align-items-center text-light px-4">
-                                <a href="#" class="small-calendar-add-task-btn-box-click"><div class="small-calendar-add-task-btn-box btn text-light bg-dark d-flex px-3 py-2">
+                                <a href="#body" class="small-calendar-add-task-btn-box-click"><div class="small-calendar-add-task-btn-box btn text-light bg-dark d-flex px-3 py-2">
 
                                     <div class="small-calendar-add-task-btn">
                                         <i class="fas fa-plus"></i>
@@ -871,7 +874,7 @@
 
             <!-- cancel cross icon  -->
             <div class="add-task-pop-box-cancel-icon-btn-container ">
-                <a href="#" id="cancelTaskCrossBtn" class="d-flex justify-content-center align-items-center h-100">
+                <a href="#body" id="cancelTaskCrossBtn" class="d-flex justify-content-center align-items-center h-100">
                     <i class="fa-regular fs-3 fa-fw fa-times"></i>
                     </a>
             </div>
@@ -1020,7 +1023,7 @@
 
             <!-- cancel cross icon  -->
             <div class="add-task-pop-box-cancel-icon-btn-container ">
-                <a href="#" id="cancelTaskCrossBtn" class="d-flex justify-content-center align-items-center h-100">
+                <a href="#body" id="cancelTaskCrossBtn" class="d-flex justify-content-center align-items-center h-100">
                     <i class="fa-regular fs-3 fa-fw fa-times"></i>
                     </a>
             </div>
@@ -1076,7 +1079,7 @@
 
             <!-- cancel cross icon  -->
             <div class="add-task-pop-box-cancel-icon-btn-container ">
-                <a href="#" id="cancelAddNoteCrossBtn" class="d-flex justify-content-center align-items-center h-100">
+                <a href="#body" id="cancelAddNoteCrossBtn" class="d-flex justify-content-center align-items-center h-100">
                     <i class="fa-regular fs-3 fa-fw fa-times"></i>
                     </a>
             </div>
@@ -1130,7 +1133,7 @@
 
             <!-- cancel cross icon  -->
             <div class="add-task-pop-box-cancel-icon-btn-container ">
-                <a href="#" id="cancelEditNoteCrossBtn" class="d-flex justify-content-center align-items-center h-100">
+                <a href="#body" id="cancelEditNoteCrossBtn" class="d-flex justify-content-center align-items-center h-100">
                     <i class="fa-regular fs-3 fa-fw fa-times"></i>
                     </a>
             </div>
@@ -1149,6 +1152,56 @@
             </div>
         </div>
     </div>
+
+
+
+    <!-- accesiblity model  -->
+    <!-- Vertically centered modal -->
+    <div class="modal" tabindex="-1" id="accesiblity-box">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title fw-bold text-dark fs-4">Accessiblity setting </h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <!-- theme togle external css -->
+                <div class="modal-body-container mx-3">
+                    <div class="theme-container mx-5 d-flex justify-content-between align-items-center">
+                        <div class="theme-text-container">
+                            <span class="theme-text fs-5 fw-bold text-dark">
+                                Select theme
+                            </span>
+                        </div>
+                        <div class="theme-swtich-container" >
+                            <label class="switch">
+                                
+                                <input type="checkbox" id="toggleThemeSwitch">
+                                
+                                <span class="slider round"></span>
+                                <span class="uncheked-txt">
+                                    Light
+                                </span>
+                                <span class="checked-txt">
+                                    Dark
+                                </span>
+                              </label>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="modal-footer d-flex justify-content-center align-items-center">
+              <button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary" id="saveAccesiblity">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+  
+
 
     <script src="assests/js/custom.js"></script>
 

@@ -1,0 +1,66 @@
+/* Leading rule */
+html {
+    -webkit-filter: invert(100%) hue-rotate(180deg) !important;
+    filter: invert(100%) hue-rotate(180deg) !important;
+  }
+  
+  /* Reverse rule */
+  img,
+  video,
+  :not(object):not(body)>embed,
+  object,
+  svg image,
+  [style*="background:url"],
+  [style*="background-image:url"],
+  [style*="background: url"],
+  [style*="background-image: url"],
+  [background],
+  twitterwidget,
+  .sr-reader,
+  .sr-backdrop {
+    -webkit-filter: invert(100%) hue-rotate(180deg) !important;
+    filter: invert(100%) hue-rotate(180deg) !important;
+  }
+  [style*="background:url"] *,
+  [style*="background-image:url"] *,
+  [style*="background: url"] *,
+  [style*="background-image: url"] *,
+  input,
+  [background] *,
+  img[src^="https://s0.wp.com/latex.php"],
+  twitterwidget .NaturalImage-image {
+    -webkit-filter: none !important;
+    filter: none !important;
+  }
+  .compatibility-with-darkreader-below-4-3-3 {
+    background: white !important;
+  }
+  
+  /* Text contrast */
+  html {
+    text-shadow: 0 0 0 !important;
+  }
+  
+  /* Full screen */
+  :-webkit-full-screen, :-webkit-full-screen * {
+    -webkit-filter: none !important;
+    filter: none !important;
+  }
+  :-moz-full-screen, :-moz-full-screen * {
+    -webkit-filter: none !important;
+    filter: none !important;
+  }
+  :fullscreen, :fullscreen * {
+    -webkit-filter: none !important;
+    filter: none !important;
+  }
+  
+  /* Page background */
+  html {
+    background: rgb(0,0,0) !important;
+  }
+  
+  /* Custom rules */
+  .compatibility-with-darkreader-below-4-3-3 {
+      background: white !important;
+  }
