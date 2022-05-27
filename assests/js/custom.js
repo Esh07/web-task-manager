@@ -163,7 +163,7 @@ $(document).ready(function () {
             // event.preventDefault();
             console.log("empty task");
             // if
-            if (taskTitle == "") {
+            if (taskTitle === "") {
                 console.log("empty task title");
                 $(".add-task-pop-box-body-content:nth-of-type(1) span.errorMsg").text("Task title cannot be empty");
             }
