@@ -76,6 +76,7 @@ $(document).ready(function () {
 
     var taskList = JSON.parse(localStorage.getItem("taskList"));
 
+if(taskList != null){
     if (taskList.length > 0) {
         for (let i = 0; i < taskList.length; i++) {
             var taskTitle = taskList[i].taskTitle;
@@ -130,7 +131,10 @@ $(document).ready(function () {
                                     </li>`
             $(".work-tab-list-of-task-items").append(individualTaskItem);
         }
-    }
+    } 
+} else{
+console.log("Task list is empty");
+}
 
     //listen to click createTaskBtn and create task in local storage
     $("#createTaskBtn").on("click", function (event) {
