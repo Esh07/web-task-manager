@@ -80,3 +80,20 @@ const sampleTaskList = [
         status: 'pending'
     }
 ];
+
+
+// Add this to your existing sampleTaskList
+const sampleNoteList = [
+    {
+        noteTitle: 'Project Meeting Notes',
+        noteDesc: 'Discussed task manager features and timeline for July 13 sprint.'
+    },
+    {
+        noteTitle: 'UI Design Ideas',
+        noteDesc: 'Dashboard: Add task filters, calendar integration, dark mode toggle.'
+    },
+    {
+        noteTitle: 'Daily Goals',
+        noteDesc: 'Complete 3 tasks, gym session, read 1 tech article.'
+    }
+];

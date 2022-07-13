@@ -1,459 +1,241 @@
 //onlick event .add-task-btn-on-menu jquery
 
+// Initialize sample data if empty
 if (!localStorage.getItem("taskList")) {
     localStorage.setItem("taskList", JSON.stringify(sampleTaskList));
+}
+if (!localStorage.getItem("noteList")) {
+    localStorage.setItem("noteList", JSON.stringify(sampleNoteList)); // Ensure sampleNoteList exists in sampleData.js
 }
 
 
 $(document).ready(function () {
 
-    $(".add-task-btn-on-menu").on("click", function () {
-        console.log("add task button clicked");
-        $("body").addClass("overflow");
-        $("#addTaskBox").removeClass("hidden");
-    }
-    );
-
-    //listen to click cancelTaskBtn
-    $("#cancelTaskBtn").on("click", function () {
-        console.log("cancel task button clicked");
-        $("body").removeClass("overflow");
-        $(".add-task-pop-box-body-content span.errorMsg").text("");
-        $("#addTaskBox").addClass("hidden");
-    }
-    );
-
-    //listo to click cancelTaskCrossBtn
-    $("#cancelTaskCrossBtn").on("click", function () {
-        console.log("cancel task button clicked");
-        $("body").removeClass("overflow");
-        $(".add-task-pop-box-body-content span.errorMsg").text("");
-
-        $("#addTaskBox").addClass("hidden");
-    }
-    );
-    $(".notes-add-note-link").on("click", function () {
-        console.log("add note button clicked");
-        $("body").addClass("overflow");
-        $("#addNoteBox").removeClass("hidden");
-    }
-    );
-    //listen to click cancelNoteBtn
-    $("#cancelAddNoteBtn").on("click", function () {
-        console.log("cancel note button clicked");
-        $("body").removeClass("overflow");
-        $(".add-task-pop-box-body-content span.errorMsg").text("");
-
-        $("#addNoteBox").addClass("hidden");
-    }
-    );
-    //listo to click cancelNoteCrossBtn
-    $("#cancelAddNoteCrossBtn").on("click", function () {
-        console.log("cancel note button clicked");
-        $("body").removeClass("overflow");
-        $("#addNoteBox").addClass("hidden");
-    }
-    );
-
-    //listen to click cancelNoteBtn
-    $(".small-calendar-add-task-btn-box-click").on("click", function () {
-        console.log("add task button clicked");
-        $("body").addClass("overflow");
-        $("#addTaskBox").removeClass("hidden");
-    }
-    );
-
-    $(" #editTaskBox #cancelTaskCrossBtn").on("click", function () {
-        console.log("cancel task button clicked");
-        $("body").removeClass("overflow");
-        $(".add-task-pop-box-body-content span.errorMsg").text("");
-
-        $("#editTaskBox").addClass("hidden");
-    });
-
-    //listen to click cancelTaskBtn
-    $("#editTaskBox #cancelTaskBtn").on("click", function () {
-        console.log("cancel task button clicked");
-        $("body").removeClass("overflow");
-        $("#editTaskBox").addClass("hidden");
-    }
-    );
-
-
-    var taskList = JSON.parse(localStorage.getItem("taskList"));
-
-    if (taskList != null) {
-        if (taskList.length > 0) {
-            for (let i = 0; i < taskList.length; i++) {
-                var taskTitle = taskList[i].taskTitle;
-                var startTime = taskList[i].startTime;
-                var category = taskList[i].category;
-
-                var individualTaskItem = `<li class="work-tab-task-item">
-                                        <div class="work-tab-task-item-content row ">
-                                            <div class="work-task-item-left-content col-md-4 d-flex justify-content-evenly align-items-center">
-                                                <div class="work-task-item-icon-container">
-                                                    <!-- checkbox icon -->
-                                                    <!-- <i class="fas fa-check-circle"></i>
-                                                     -->
-                                                     <div class="work-task-item-icon-content">
-                                                         <div class="container work-task-item-icon-custom-content">
-                                                             <input id="task-${taskList[i].id}" type="checkbox" class="work-task-item-checkbox" />
-                                                             <label for="task-${taskList[i].id}" class="custome-check-box"></label>
-                                                         </div>
-                                                     </div>
-                                                </div>
-                                                <div class="work-task-item-time-container">
-                                                    <span class="work-task-item-time fs-5">`+ startTime + `</span>
-                                                </div>
-                                            </div>
-                                            <div class="work-task-item-right-content col-md-8 d-flex  justify-content-between align-items-center px-3 py-1">
-                                                <div class="work-task-item-category-title-container d-flex flex-column align-items-start">
-                                                <div class="work-task-item-category-container">
-                                                    <span class="work-task-item-category fw-lighter fs-6">`+ category + `</span>
-                                                </div>
-                                                <div class="work-task-item-title-container">
-                                                    <span class="work-task-item-title fs-4">`+ taskTitle + `</span>
-                                                </div>
-                                            </div>
-
-                                                <!-- edit and delete icon by default display none -->
-                                                <div class="work-task-item-edit-and-delete-container d-flex gap-4 justify-content-end pe-2">
-                                                    <div class="work-task-item-edit-container ">
-                                                        <!-- anchor tag with id editIcon id with value delete icon -->
-                                                        <a href="#" id="editIcon" class="work-task-item-edit-icon fs-4 text-dark" data-toggle="modal" data-target="#editTaskModal">
-                                                            <i class="fa-light fa-pen-to-square"></i>
-                                                        </a>
-                                                    </div>
-                                                    <div class="work-task-item-delete-container">
-                                                        <!-- anchor tag with id deleteIcon id with value delete icon -->
-                                                        <a href="#" id="deleteIcon" class="work-task-item-delete-icon fs-4 text-dark" data-toggle="modal" data-target="#deleteTaskModal">
-                                                            <i class="fa-light fa-trash-can"></i>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>`
-                $(".work-tab-list-of-task-items").append(individualTaskItem);
-            }
-        }
-    } else {
-        console.log("Task list is empty");
-    }
-
-    //listen to click createTaskBtn and create task in local storage
-    $("#createTaskBtn").on("click", function (event) {
-        console.log("create task button clicked");
-        var taskTitle = $("#task-name-input").val();
-        var taskDesc = $("#task-desc-input").val();
-        var taskDueDate = $("#task-date-input").val();
-        var startTime = $("#task-start-input").val();
-        var endTime = $("#task-end-input").val();
-        var category = $("#task-category-input").val();
-        var type = $("#task-type-input").val();
-        var status = $("#task-status-input").val();
-
-        var task = {
-            taskTitle: taskTitle,
-            taskDesc: taskDesc,
-            taskDueDate: taskDueDate,
-            startTime: startTime,
-            endTime: endTime,
-            category: category,
-            type: type,
-            status: status
-        };
-        console.log(task);
-
-        //prevent empty task from being created
-        if ((taskTitle === "") || (taskDesc === "") || (taskDueDate === "") || (startTime === "") || (endTime === "") || (category === "") || (type === "") || (status === "")) {
-            //prevent default behaviour
-
-            // event.preventDefault();
-            console.log("empty task");
-            // if
-            if (taskTitle === "") {
-                console.log("empty task title");
-                $(".add-task-pop-box-body-content:nth-of-type(1) span.errorMsg").text("Task title cannot be empty");
-            }
-            if (taskDesc === "") {
-                $(".add-task-pop-box-body-content:nth-of-type(2) span.errorMsg").text("Description is empty");
-
-            }
-            if (taskDueDate === "") {
-                $(".add-task-pop-box-body-content:nth-of-type(3) span.errorMsg").text("Date is empty");
-            }
-            if (startTime === "") {
-                $(".add-task-pop-box-body-content:nth-of-type(4) span.errorMsg").text("time is empty");
-
-            }
-            if (endTime === "") {
-                $(".add-task-pop-box-body-content:nth-of-type(5) span.errorMsg").text("Time is empty");
-
-            }
-            if (category === "") {
-                $(".add-task-pop-box-body-content:nth-of-type(6) span.errorMsg").text("Category is empty");
-
-            }
-            if (type === "") {
-                $(".add-task-pop-box-body-content:nth-of-type(7) span.errorMsg").text("Type is empty");
-
-            }
-            if (status === "") {
-                $(".add-task-pop-box-body-content:nth-of-type(8) span.errorMsg").text("Status is empty");
-            }
-
+    // Toggle Modal Visibility & Body Scroll
+    function toggleModal(modalId, show) {
+        if (show) {
+            $("body").addClass("overflow");
+            $(modalId).removeClass("hidden");
         } else {
-            //create task in local storage
-            if (localStorage.getItem("taskList") != null) {
-                var taskList = JSON.parse(localStorage.getItem("taskList"));
-                taskList.push(task);
-                localStorage.setItem("taskList", JSON.stringify(taskList));
-                $(".add-task-pop-box-body-content span.errorMsg").text("");
-                location.reload();
-
-            }
-            else {
-                var taskList = [];
-                taskList.push(task);
-                localStorage.setItem("taskList", JSON.stringify(taskList));
-                location.reload();
-
-            }
-            // localStorage.setItem("taskList", JSON.stringify(task));
-            //clear form
-            $("#task-name-input").val("");
-            $("#task-desc-input").val("");
-            $("#task-date-input").val("");
-            $("#task-start-input").val("");
-            $("#task-end-input").val("");
-            $("#task-category-input").val("");
-            $("#task-type-input").val("");
-            $("#task-status-input").val("");
-            //hide form
             $("body").removeClass("overflow");
-            $("#addTaskBox").addClass("hidden");
-            window.location.reload();
+            $(modalId).addClass("hidden");
+            // Clear error messages
+            $(`${modalId} .errorMsg`).text("");
         }
+    }
 
-        //---------------------------------------------------------------
-        //show new task on screen
-
-
-    });
-
-
-    //--------------------------------------------------------
-
-    $(".work-tab-task-item").on("click", "#deleteIcon", function (event) {
-        var taskList = JSON.parse(localStorage.getItem("taskList"));
-        var taskId = $(this).parent().parent().parent().parent().parent().index();
-        console.log(taskId);
-        taskList.splice(taskId, 1);
-        localStorage.setItem("taskList", JSON.stringify(taskList));
-        $(this).parent().parent().parent().parent().parent().remove();
-        location.reload();
-
-    });
-
-
-
-    $(".work-tab-task-item").on("click", "#editIcon", function (event) {
-        $("#editTaskBox").removeClass("hidden");
-        $("body").addClass("overflow");
-        var taskList = JSON.parse(localStorage.getItem("taskList"));
-        var taskIndex = $(this).parent().parent().parent().parent().parent().index();
-
-        $("#edit-task-name-input").val(taskList[taskIndex].taskTitle);
-        $("#edit-task-desc-input").val(taskList[taskIndex].taskDesc);
-        $("#edit-task-date-input").val(taskList[taskIndex].taskDueDate);
-        $("#edit-task-start-input").val(taskList[taskIndex].startTime);
-        $("#edit-task-end-input").val(taskList[taskIndex].endTime);
-        $("#edit-task-category-input").val(taskList[taskIndex].category);
-        $("#edit-task-type-input").val(taskList[taskIndex].type);
-        $("#edit-task-status-input").val(taskList[taskIndex].status);
-
-        //click listern 
-        $("#editTaskBox #createTaskBtn").on("click", function (event) {
-            // event.preventDefault();
-            var taskTitle = $("#edit-task-name-input").val();
-            var taskDesc = $("#edit-task-desc-input").val();
-            var taskDate = $("#edit-task-date-input").val();
-            var startTime = $("#edit-task-start-input").val();
-            var endTime = $("#edit-task-end-input").val();
-            var category = $("#edit-task-category-input").val();
-            var taskType = $("#edit-task-type-input").val();
-            var taskStatus = $("#edit-task-status-input").val();
-
-            //prevent empty task from being created
-            if ((taskTitle === "") || (taskDesc === "") || (taskDate === "") || (startTime === "") || (endTime === "") || (category === "") || (taskType === "") || (taskStatus === "")) {
-                //prevent default behaviour
-
-                event.preventDefault();
-                console.log("empty task");
-                // if
-                if (taskTitle == "") {
-                    console.log("empty task title");
-                    $(".add-task-pop-box-body-content:nth-of-type(1) span.errorMsg").text("Task title cannot be empty");
-                    event.preventDefault();
-                }
-                if (taskDesc === "") {
-                    $(".add-task-pop-box-body-content:nth-of-type(2) span.errorMsg").text("Description is empty");
-                    event.preventDefault();
-
-                }
-                if (taskDate === "") {
-                    $(".add-task-pop-box-body-content:nth-of-type(3) span.errorMsg").text("Date is empty");
-                }
-                if (startTime === "") {
-                    $(".add-task-pop-box-body-content:nth-of-type(4) span.errorMsg").text("time is empty");
-
-                }
-                if (endTime === "") {
-                    $(".add-task-pop-box-body-content:nth-of-type(5) span.errorMsg").text("Time is empty");
-
-                }
-                if (category === "") {
-                    $(".add-task-pop-box-body-content:nth-of-type(6) span.errorMsg").text("Category is empty");
-
-                }
-                if (taskType === "") {
-                    $(".add-task-pop-box-body-content:nth-of-type(7) span.errorMsg").text("Type is empty");
-
-                }
-                if (taskStatus === "") {
-                    $(".add-task-pop-box-body-content:nth-of-type(8) span.errorMsg").text("Status is empty");
-                }
-
-            } else {
-
-
-
-
-                taskList[taskIndex].taskTitle = taskTitle;
-                taskList[taskIndex].taskDesc = taskDesc;
-                taskList[taskIndex].taskDate = taskDate;
-                taskList[taskIndex].startTime = startTime;
-                taskList[taskIndex].endTime = endTime;
-                taskList[taskIndex].category = category;
-                taskList[taskIndex].taskType = taskType;
-                taskList[taskIndex].taskStatus = taskStatus;
-
-                localStorage.setItem("taskList", JSON.stringify(taskList));
-                location.reload();
+    // Generic Validation Function
+    function validateForm(fields, contextSelector) {
+        let isValid = true;
+        fields.forEach((field, i) => {
+            if (field.val() === "") {
+                $(`${contextSelector} .add-task-pop-box-body-content:nth-of-type(${i + 1}) span.errorMsg`).text("Field is required");
+                isValid = false;
             }
+        });
+        return isValid;
+    }
 
+
+    // Open Modals
+    $(".add-task-btn-on-menu, .small-calendar-add-task-btn-box-click").click(() => toggleModal("#addTaskBox", true));
+    $(".notes-add-note-link").click(() => toggleModal("#addNoteBox", true));
+
+    // Close Modals (Cancel buttons & Cross icons)
+    $("#cancelTaskBtn, #cancelTaskCrossBtn").click(() => toggleModal("#addTaskBox", false));
+    $("#cancelAddNoteBtn, #cancelAddNoteCrossBtn").click(() => toggleModal("#addNoteBox", false));
+    $("#editTaskBox #cancelTaskBtn, #editTaskBox #cancelTaskCrossBtn").click(() => toggleModal("#editTaskBox", false));
+    $("#cancelEditNoteBtn, #cancelEditNoteCrossBtn").click(() => toggleModal("#editNoteBox", false));
+
+
+
+    // CREATE TASK
+    $("#createTaskBtn").click(function () {
+        const fields = [
+            $("#task-name-input"), $("#task-desc-input"), $("#task-date-input"),
+            $("#task-start-input"), $("#task-end-input"), $("#task-category-input"),
+            $("#task-type-input"), $("#task-status-input")
+        ];
+
+        if (validateForm(fields, "#addTaskBox")) {
+            const newTask = {
+                taskTitle: fields[0].val(),
+                taskDesc: fields[1].val(),
+                taskDueDate: fields[2].val(),
+                startTime: fields[3].val(),
+                endTime: fields[4].val(),
+                category: fields[5].val(),
+                type: fields[6].val(),
+                status: fields[7].val(),
+                id: Date.now()
+            };
+
+            const taskList = JSON.parse(localStorage.getItem("taskList")) || [];
+            taskList.push(newTask);
+            localStorage.setItem("taskList", JSON.stringify(taskList));
+
+            // Clear Inputs
+            fields.forEach(f => f.val(""));
+            toggleModal("#addTaskBox", false);
+            renderDashboardTasks(); // Re-render without reload
+        }
+    });
+
+
+    // CREATE NOTE
+    $("#createAddNoteBtn").on("click", function (e) {
+        e.preventDefault();
+
+        const title = $("#add-note-name-input").val().trim();
+        const desc = $("#add-note-desc-input").val().trim();
+
+        if (!title || !desc) return;
+
+        const noteList = JSON.parse(localStorage.getItem("noteList") || "[]");
+
+        noteList.push({
+            noteTitle: title,
+            noteDesc: desc,
+            createdAt: new Date().toISOString(),
+            tag: "Quick note",
+            color: "yellow",
+            pinned: false
         });
 
+        localStorage.setItem("noteList", JSON.stringify(noteList));
+
+        $("#add-note-name-input").val("");
+        $("#add-note-desc-input").val("");
+
+        toggleModal("#addNoteBox", false);
+        renderNotes();
     });
 
 
 
 
+    // DELETE TASK (Delegated Event)
+    $(document).on("click", ".deleteTaskBtn", function (e) {
+        e.preventDefault();
+        const index = Number($(this).closest(".work-tab-task-item").attr("data-index"));
+        const taskList = JSON.parse(localStorage.getItem("taskList") || "[]");
+        taskList.splice(index, 1);
+        localStorage.setItem("taskList", JSON.stringify(taskList));
+        renderDashboardTasks();
+    });
 
+    // DELETE NOTE (Delegated Event)
+    $(document).on("click", ".deleteNoteBtn", function (e) {
+        e.preventDefault();
 
+        const index = Number($(this).closest(".notes-list-item").attr("data-index"));
+        const noteList = JSON.parse(localStorage.getItem("noteList") || "[]");
 
+        noteList.splice(index, 1);
+        localStorage.setItem("noteList", JSON.stringify(noteList));
 
-    //listen to click createAddNoteBtn and create task in local storage
-    $("#createAddNoteBtn").click(function (event) {
-        var noteTitle = $("#add-note-name-input").val();
-        var noteDesc = $("#add-note-desc-input").val();
-        var note = {
-            noteTitle: noteTitle,
-            noteDesc: noteDesc
-        }
-        if (noteTitle === "" || noteDesc === "") {
-            if (noteTitle === "") {
-                $("#addNoteBox .add-task-pop-box .add-task-pop-box-body .add-task-pop-box-body-content:nth-of-type(1) span.errorMsg").text("Title is empty");
-                console.log("title is empty");
-
-            }
-            if (noteDesc === "") {
-                $("#addNoteBox .add-task-pop-box .add-task-pop-box-body .add-task-pop-box-body-content:nth-of-type(2) span.errorMsg").text("Description is empty");
-
-            }
-        }
-        else {
-            //create note in local storage
-            if (localStorage.getItem("noteList") != null) {
-                var noteList = JSON.parse(localStorage.getItem("noteList"));
-                noteList.push(note);
-                localStorage.setItem("noteList", JSON.stringify(noteList));
-
-            }
-            else {
-                var noteList = [];
-                noteList.push(note);
-                localStorage.setItem("noteList", JSON.stringify(noteList));
-
-            }
-            // localStorage.setItem("noteList", JSON.stringify(note));
-            //clear form
-            $("#note-name-input").val("");
-            $("#note-desc-input").val("");
-            //hide form
-            $("body").removeClass("overflow");
-            $("#addNoteBox").addClass("hidden");
-        }
+        renderNotes();
     });
 
 
+    // EDIT TASK (Open Modal & Pre-fill)
 
-    // click listener for accessiblity icon
-    var myModal = document.getElementById('accesiblity-icon');
+    $(document).on("click", ".editTaskBtn", function (e) {
+        e.preventDefault();
+        const index = Number($(this).closest(".work-tab-task-item").attr("data-index"));
+        const taskList = JSON.parse(localStorage.getItem("taskList") || "[]");
+        const task = taskList[index];
+
+        $("#edit-task-name-input").val(task.taskTitle);
+        $("#edit-task-desc-input").val(task.taskDesc);
+        $("#edit-task-date-input").val(task.taskDueDate);
+        $("#edit-task-start-input").val(task.startTime);
+        $("#edit-task-end-input").val(task.endTime);
+        $("#edit-task-category-input").val(task.category);
+        $("#edit-task-type-input").val(task.type);
+        $("#edit-task-status-input").val(task.status);
+
+        $("#editTaskBox #createTaskBtn").data("editIndex", index);
+        toggleModal("#editTaskBox", true);
+    });
+
+    // edit notes
+    $(document).on("click", ".editNoteBtn", function (e) {
+        e.preventDefault();
+
+        const index = Number($(this).closest(".notes-list-item").attr("data-index"));
+        const noteList = JSON.parse(localStorage.getItem("noteList") || "[]");
+        const note = noteList[index];
+
+        $("#edit-note-name-input").val(note.noteTitle);
+        $("#edit-note-desc-input").val(note.noteDesc);
+
+        $("#editAddNoteBtn").data("editIndex", index);
+        toggleModal("#editNoteBox", true);
+    });
+
+    $("#editAddNoteBtn").on("click", function (e) {
+        e.preventDefault();
+
+        const index = $(this).data("editIndex");
+        const noteList = JSON.parse(localStorage.getItem("noteList") || "[]");
+
+        noteList[index].noteTitle = $("#edit-note-name-input").val().trim();
+        noteList[index].noteDesc = $("#edit-note-desc-input").val().trim();
+
+        localStorage.setItem("noteList", JSON.stringify(noteList));
+
+        toggleModal("#editNoteBox", false);
+        renderNotes();
+    });
+
+
+    // SAVE EDITED TASK
+    $("#editTaskBox #createTaskBtn").click(function () {
+        const index = $(this).data("editIndex");
+        const taskList = JSON.parse(localStorage.getItem("taskList"));
+
+        // Update task object
+        taskList[index].taskTitle = $("#edit-task-name-input").val();
+        taskList[index].taskDesc = $("#edit-task-desc-input").val();
+        taskList[index].taskDueDate = $("#edit-task-date-input").val();
+        taskList[index].startTime = $("#edit-task-start-input").val();
+        taskList[index].endTime = $("#edit-task-end-input").val();
+        taskList[index].category = $("#edit-task-category-input").val();
+        taskList[index].type = $("#edit-task-type-input").val();
+        taskList[index].status = $("#edit-task-status-input").val();
+
+        localStorage.setItem("taskList", JSON.stringify(taskList));
+        toggleModal("#editTaskBox", false);
+        renderDashboardTasks();
+    });
+
+
+    // --- 4. ACCESSIBILITY / THEME ---
+    const themeLink = document.querySelector("#theme-link");
     const currentTheme = localStorage.getItem("theme");
-    // If the current theme in localStorage is "dark"...
-    const theme = document.querySelector("#theme-link");
-    if (currentTheme == "dark") {
-        // ...then use the .dark-theme class
-        theme.href = "assets/css/dark-style.css";
-        document.querySelector("#toggleThemeSwitch").checked = true;
 
+    if (currentTheme === "dark") {
+        themeLink.href = "assets/css/dark-style.css";
+        $("#toggleThemeSwitch").prop("checked", true);
     }
 
-
-    myModal.addEventListener("click", function (event) {
-
-        let myModalEl = document.querySelector("#accesiblity-box");
-        let modal = bootstrap.Modal.getOrCreateInstance(myModalEl);// Returns a Bootstrap modal instance
+    $("#accesiblity-icon").click(() => {
+        const modal = new bootstrap.Modal(document.getElementById('accesiblity-box'));
         modal.show();
-        //togle theme
-        let themeToggle = document.querySelector("#toggleThemeSwitch");
-        // Select the stylesheet <link>
-        let themeState = "";
-        themeToggle.addEventListener("click", function () {
-            // If the current URL contains "ligh-theme.css"
-            //toggle theme.href.toggle()
 
-            if (theme.getAttribute("href") == "") {
-                // ...then change the href to "dark-theme.css"
-                theme.href = "assets/css/dark-style.css";
-                // localStorage.setItem("theme", "dark");
-                themeState = "dark";
-            } else {
-                // ...otherwise change the href to "light-theme.css"
-                theme.href = "";
-                // localStorage.setItem("theme", "light");
-                themeState = "light";
-            }
-        }
-            , false);
+        $("#saveAccesiblity").off("click").click(() => {
+            const isDark = $("#toggleThemeSwitch").is(":checked");
+            const newTheme = isDark ? "dark" : "light";
 
-
-        let saveAccesiblity = document.querySelector("#saveAccesiblity");
-        saveAccesiblity.addEventListener("click", function () {
+            themeLink.href = isDark ? "assets/css/dark-style.css" : "";
+            localStorage.setItem("theme", newTheme);
             modal.hide();
-            localStorage.setItem("theme", themeState);
-
-        }, false);
-
-
-
+        });
     });
 
-
-
-
+    // --- 5. INITIAL RENDER ---
+    renderDashboardTasks();
+    renderNotes();
 
 });
