@@ -1,6 +1,12 @@
 //onlick event .add-task-btn-on-menu jquery
 
+if (!localStorage.getItem("taskList")) {
+    localStorage.setItem("taskList", JSON.stringify(sampleTaskList));
+}
+
+
 $(document).ready(function () {
+
     $(".add-task-btn-on-menu").on("click", function () {
         console.log("add task button clicked");
         $("body").addClass("overflow");
@@ -76,14 +82,14 @@ $(document).ready(function () {
 
     var taskList = JSON.parse(localStorage.getItem("taskList"));
 
-if(taskList != null){
-    if (taskList.length > 0) {
-        for (let i = 0; i < taskList.length; i++) {
-            var taskTitle = taskList[i].taskTitle;
-            var startTime = taskList[i].startTime;
-            var category = taskList[i].category;
+    if (taskList != null) {
+        if (taskList.length > 0) {
+            for (let i = 0; i < taskList.length; i++) {
+                var taskTitle = taskList[i].taskTitle;
+                var startTime = taskList[i].startTime;
+                var category = taskList[i].category;
 
-            var individualTaskItem = `<li class="work-tab-task-item">
+                var individualTaskItem = `<li class="work-tab-task-item">
                                         <div class="work-tab-task-item-content row ">
                                             <div class="work-task-item-left-content col-md-4 d-flex justify-content-evenly align-items-center">
                                                 <div class="work-task-item-icon-container">
@@ -92,8 +98,8 @@ if(taskList != null){
                                                      -->
                                                      <div class="work-task-item-icon-content">
                                                          <div class="container work-task-item-icon-custom-content">
-                                                             <input id="task-`+ i + `" type="checkbox" class="work-task-item-checkbox" />
-                                                             <label for="task-`+ i + `" class="custome-check-box"></label>
+                                                             <input id="task-${taskList[i].id}" type="checkbox" class="work-task-item-checkbox" />
+                                                             <label for="task-${taskList[i].id}" class="custome-check-box"></label>
                                                          </div>
                                                      </div>
                                                 </div>
@@ -129,12 +135,12 @@ if(taskList != null){
                                             </div>
                                         </div>
                                     </li>`
-            $(".work-tab-list-of-task-items").append(individualTaskItem);
+                $(".work-tab-list-of-task-items").append(individualTaskItem);
+            }
         }
-    } 
-} else{
-console.log("Task list is empty");
-}
+    } else {
+        console.log("Task list is empty");
+    }
 
     //listen to click createTaskBtn and create task in local storage
     $("#createTaskBtn").on("click", function (event) {
@@ -401,7 +407,7 @@ console.log("Task list is empty");
     const theme = document.querySelector("#theme-link");
     if (currentTheme == "dark") {
         // ...then use the .dark-theme class
-        theme.href = "assests/css/dark-style.css";
+        theme.href = "assets/css/dark-style.css";
         document.querySelector("#toggleThemeSwitch").checked = true;
 
     }
@@ -422,7 +428,7 @@ console.log("Task list is empty");
 
             if (theme.getAttribute("href") == "") {
                 // ...then change the href to "dark-theme.css"
-                theme.href = "assests/css/dark-style.css";
+                theme.href = "assets/css/dark-style.css";
                 // localStorage.setItem("theme", "dark");
                 themeState = "dark";
             } else {
