@@ -27,7 +27,6 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- //Boostrap js bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
     <!-- //Jquery CDN -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.0.0/mdb.min.css" rel="stylesheet" />
@@ -39,7 +38,9 @@
 
     <script src="assets/js/simpleData.js"></script>
     <script src="assets/js/util.js"></script>
+
     <script src="assets/js/custom.js"></script>
+
 
     <!-- import custom js file -->
 </head>
@@ -309,7 +310,7 @@
 
             <!-- task notes section -->
             <section class="notes-container  py-4 bg-light border border-dark">
-                <div class="notes-content-box d-flex flex-column justify-content-between h-100">
+                <div class="notes-content-box d-flex flex-column h-100 gap-4">
                     <div class="note-section-heading-and-list-of-notes">
                         <div class="notes-section-head d-flex justify-content-center align-items-center py-2">
                             <h2 class="note-heading-txt fw-bolder text-dark fs-2">
@@ -317,7 +318,8 @@
                             </h2>
                         </div>
                         <div class="notes-list-container ">
-                            <ul class="list-of-notes list-unstyled notes-list  mx-5 d-flex flex-column gap-3">
+                            <ul class="list-of-notes list-unstyled notes-list  mx-5 d-flex flex-column gap-3 h-20 "
+                                style="height:20rem">
                                 <!-- <li class="notes-list-item py-3 px-4 rounded ">
                                     <div class="notes-list-item-content d-flex flex-column gap-1">
                                         <div class="notes-list-item-head d-flex justify-content-between ">
@@ -955,6 +957,31 @@
                     <span class="errorMsg"></span>
 
                 </div>
+                <div class="row g-2 align-items-end">
+
+                    <!-- Tag -->
+                    <div class="col-12 col-md-5">
+                        <label class="form-label mb-1" for="add-note-tag-input">Tag</label>
+                        <input type="text" class="form-control" id="add-note-tag-input"
+                            placeholder="e.g. Bills, Ideas, Shopping">
+                    </div>
+
+                    <!-- Color -->
+                    <div class="col-12 col-md-4">
+                        <label class="form-label mb-1" for="add-note-color-input">Color</label>
+                        <select class="form-select" id="add-note-color-input">
+                            <option value="primary">Primary</option>
+                            <option value="secondary">Secondary</option>
+                            <option value="success">Success</option>
+                            <option value="danger">Danger</option>
+                            <option value="warning" selected>Warning</option>
+                            <option value="info">Info</option>
+                            <option value="light">Light</option>
+                            <option value="dark">Dark</option>
+                        </select>
+                    </div>
+
+                </div>
 
             </div>
             <div class="form-group d-flex justify-content-center gap-4 ">
@@ -984,7 +1011,7 @@
         <div class="add-task-pop-box d-flex flex-column justify-content-evenly">
             <div class="add-task-pop-box-head fs-2 fw-bolder">
                 <span class="add-task-pop-box-head-text text-dark">
-                    Create Note
+                    Edit Note
                 </span>
             </div>
             <div class="add-task-pop-box-body d-flex flex-column mt-0 mb-3">
@@ -1000,7 +1027,6 @@
                             placeholder="Write title here.." name="taskName" id="edit-note-name-input">
                     </div>
                     <span class="errorMsg"></span>
-
                 </div>
                 <div class="add-task-pop-box-body-content pb-2">
                     <div class="add-task-pop-box-body-content-head">
@@ -1015,7 +1041,31 @@
                     <span class="errorMsg"></span>
 
                 </div>
+                <!-- Tag + Color + Pinned (one row) -->
+                <div class="row g-2 align-items-end mt-2">
 
+                    <!-- Tag -->
+                    <div class="col-12 col-md-5">
+                        <label class="form-label mb-1" for="edit-note-tag-input">Tag</label>
+                        <input type="text" class="form-control" id="edit-note-tag-input"
+                            placeholder="e.g. Bills, Ideas">
+                    </div>
+
+                    <!-- Color -->
+                    <div class="col-12 col-md-4">
+                        <label class="form-label mb-1" for="edit-note-color-input">Color</label>
+                        <select class="form-select" id="edit-note-color-input">
+                            <option value="primary">Primary</option>
+                            <option value="secondary">Secondary</option>
+                            <option value="success">Success</option>
+                            <option value="danger">Danger</option>
+                            <option value="warning">Warning</option>
+                            <option value="info">Info</option>
+                            <option value="light">Light</option>
+                            <option value="dark">Dark</option>
+                        </select>
+                    </div>
+                </div>
             </div>
             <div class="form-group d-flex justify-content-center gap-4 ">
                 <div class="individual-btn-container">
@@ -1028,6 +1078,8 @@
 
                 </div>
             </div>
+
+
 
             <!-- cancel cross icon  -->
             <div class="add-task-pop-box-cancel-icon-btn-container ">
@@ -1185,6 +1237,16 @@
         document.addEventListener('DOMContentLoaded', renderDashboardTasks);
 
 
+        function initTooltips() {
+            document.querySelectorAll('[data-bs-toggle="tooltip"]').forEach(el => {
+                const instance = bootstrap.Tooltip.getInstance(el);
+                if (instance) instance.dispose();
+                new bootstrap.Tooltip(el);
+            });
+        }
+
+
+
         function renderNotes() {
             const noteList = JSON.parse(localStorage.getItem("noteList") || "[]");
             const notesUl = document.querySelector(".notes-list");
@@ -1192,10 +1254,36 @@
 
             notesUl.innerHTML = "";
 
-            noteList.forEach((note, i) => {
+            // show pinned first (true above false)
+            // const sorted = [...noteList].sort((a, b) => {
+            //     if (a.pinned && !b.pinned) return -1;
+            //     if (!a.pinned && b.pinned) return 1;
+            //     return 0;
+            // });
+            const sorted = [...noteList].sort((a, b) => (b.pinned === true) - (a.pinned === true));
+
+            sorted.forEach((note, i) => {
                 const li = document.createElement("li");
-                li.className = "notes-list-item py-3 px-4 rounded";
+                const bgClass = `bg-${note.color}-subtle`;
+                const borderClass = `border border-${note.color}-subtle`;
+
+                const color = note.color || "warning";
+                const textClass = (color === "dark" || color === "primary" || color === "secondary" || color === "success" || color === "danger")
+                    ? "text-white" : "text-dark";
+
+                li.className = `
+                    notes-list-item py-3 px-4 rounded
+                     alert alert-${color}
+                    ${note.pinned ? "is-pinned" : ""}
+                    `.trim().replace(/\s+/g, " ");
+
+                li.style.setProperty("--bs-bg-opacity", "0.15");   // pastel background 
+                li.style.setProperty("--bs-border-opacity", "0.35"); // softer border 
+
+
                 li.setAttribute("data-index", i);
+                li.setAttribute("data-id", note.id);
+
 
                 li.innerHTML = `
       <div class="notes-list-item-content d-flex flex-column gap-1">
@@ -1221,15 +1309,24 @@
           <span class="notes-list-item-content-text-text fs-6 fw-light">${note.noteDesc}</span>
         </div>
 
-        <div class="notes-meta d-flex justify-content-between mt-2">
-          <small class="text-muted">${note.createdAt ? new Date(note.createdAt).toLocaleString() : ""}</small>
-          <small class="text-muted">${note.tag ? note.tag : ""}</small>
-        </div>
+               <div class="notes-meta">
+                    <span class="note-chip">${note.tag || "Note"}</span>
+
+                    <div class="note-meta-right">
+                        <a href="#" class="pinNoteBtn text-dark" data-bs-toggle="tooltip"
+   data-bs-placement="top" title="${note.pinned ? "Unpin" : "Pin"}">
+                            <i class="${note.pinned ? "fa-solid" : "fa-light"} fa-thumbtack ${note.pinned ? "note-pin-active" : ""}"></i>
+                        </a>
+                        <span class="note-date">${formatNoteMeta(getDisplayTime(note))}</span>
+                    </div>
+                </div>
       </div>
     `;
 
                 notesUl.appendChild(li);
             });
+
+            initTooltips();
         }
 
 

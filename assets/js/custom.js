@@ -4,9 +4,51 @@
 if (!localStorage.getItem("taskList")) {
     localStorage.setItem("taskList", JSON.stringify(sampleTaskList));
 }
-if (!localStorage.getItem("noteList")) {
-    localStorage.setItem("noteList", JSON.stringify(sampleNoteList)); // Ensure sampleNoteList exists in sampleData.js
+
+function normalizeNote(raw) {
+    const nowIso = new Date().toISOString();
+
+    return {
+        id: raw.id ?? (Date.now() + Math.floor(Math.random() * 100000)),
+
+        noteTitle: (raw.noteTitle ?? "").trim(),
+        noteDesc: (raw.noteDesc ?? "").trim(),
+
+        // keep both, but display updatedAt if it exists
+        createdAt: raw.createdAt ?? nowIso,
+        updatedAt: raw.updatedAt ?? raw.updateAt ?? null, // handles your earlier typo too
+
+        tag: (raw.tag ?? "Quick note").trim(),
+        color: (raw.color ?? "yellow").trim(),
+        pinned: raw.pinned ?? false
+    };
 }
+
+function migrateNotes() {
+    const noteList = JSON.parse(localStorage.getItem("noteList") || "[]");
+    const upgraded = noteList.map(normalizeNote);
+    localStorage.setItem("noteList", JSON.stringify(upgraded));
+}
+
+
+// NOTES: run only on pages that have the notes UI
+if (document.querySelector(".notes-list")) {
+
+    // 1) Seed once (if missing)
+    if (!localStorage.getItem("noteList")) {
+        localStorage.setItem("noteList", JSON.stringify(sampleNoteList));
+    }
+
+    // 2) Upgrade / fill missing fields (id, color, tag, pinned, timestamps)
+    migrateNotes();
+}
+
+
+if (!localStorage.getItem("noteList")) {
+    localStorage.setItem("noteList", JSON.stringify(sampleNoteList));
+}
+migrateNotes();
+
 
 
 $(document).ready(function () {
@@ -89,23 +131,26 @@ $(document).ready(function () {
         const title = $("#add-note-name-input").val().trim();
         const desc = $("#add-note-desc-input").val().trim();
 
+
         if (!title || !desc) return;
 
         const noteList = JSON.parse(localStorage.getItem("noteList") || "[]");
 
-        noteList.push({
+        noteList.push(normalizeNote({
             noteTitle: title,
             noteDesc: desc,
-            createdAt: new Date().toISOString(),
-            tag: "Quick note",
-            color: "yellow",
-            pinned: false
-        });
+            tag: $("#add-note-tag-input").val().trim(),
+            color: $("#add-note-color-input").val(),
+        }));
 
         localStorage.setItem("noteList", JSON.stringify(noteList));
 
         $("#add-note-name-input").val("");
         $("#add-note-desc-input").val("");
+        $("#add-note-tag-input").val("");
+        $("#add-note-color-input").val("warning"); // or any default you like
+        $("#add-note-pinned-input").prop("checked", false);
+
 
         toggleModal("#addNoteBox", false);
         renderNotes();
@@ -128,11 +173,11 @@ $(document).ready(function () {
     $(document).on("click", ".deleteNoteBtn", function (e) {
         e.preventDefault();
 
-        const index = Number($(this).closest(".notes-list-item").attr("data-index"));
+        const id = Number($(this).closest(".notes-list-item").attr("data-id"));
         const noteList = JSON.parse(localStorage.getItem("noteList") || "[]");
 
-        noteList.splice(index, 1);
-        localStorage.setItem("noteList", JSON.stringify(noteList));
+        const updated = noteList.filter(n => Number(n.id) !== id);
+        localStorage.setItem("noteList", JSON.stringify(updated));
 
         renderNotes();
     });
@@ -155,7 +200,7 @@ $(document).ready(function () {
         $("#edit-task-type-input").val(task.type);
         $("#edit-task-status-input").val(task.status);
 
-        $("#editTaskBox #createTaskBtn").data("editIndex", index);
+        $("#editTaskBox #createTaskBtn").data("editId", index);
         toggleModal("#editTaskBox", true);
     });
 
@@ -163,25 +208,43 @@ $(document).ready(function () {
     $(document).on("click", ".editNoteBtn", function (e) {
         e.preventDefault();
 
-        const index = Number($(this).closest(".notes-list-item").attr("data-index"));
+        const id = Number($(this).closest(".notes-list-item").attr("data-id"));
         const noteList = JSON.parse(localStorage.getItem("noteList") || "[]");
-        const note = noteList[index];
+
+        const note = noteList.find(n => Number(n.id) === id);
+        if (!note) return;
+
+        console.log(note);
 
         $("#edit-note-name-input").val(note.noteTitle);
         $("#edit-note-desc-input").val(note.noteDesc);
+        $("#edit-note-tag-input").val(note.tag || "");
+        $("#edit-note-color-input").val(note.color || "warning");
+        $("#edit-note-pinned-input").prop("checked", !!note.pinned);
 
-        $("#editAddNoteBtn").data("editIndex", index);
+
+        $("#editAddNoteBtn").data("editId", id);
         toggleModal("#editNoteBox", true);
     });
 
     $("#editAddNoteBtn").on("click", function (e) {
         e.preventDefault();
-
-        const index = $(this).data("editIndex");
+        const id = $(this).data("editId");
         const noteList = JSON.parse(localStorage.getItem("noteList") || "[]");
+        console.log(id)
 
-        noteList[index].noteTitle = $("#edit-note-name-input").val().trim();
-        noteList[index].noteDesc = $("#edit-note-desc-input").val().trim();
+        const note = noteList.find(n => Number(n.id) === Number(id));
+        if (!note) return;
+
+        note.noteTitle = $("#edit-note-name-input").val().trim();
+        note.noteDesc = $("#edit-note-desc-input").val().trim();
+        note.tag = $("#edit-note-tag-input").val().trim();
+        note.color = $("#edit-note-color-input").val();
+        note.pinned = $("#edit-note-pinned-input").is(":checked");
+        note.updatedAt = new Date().toISOString();
+
+        const idx = noteList.findIndex(n => Number(n.id) === Number(id));
+        noteList[idx] = normalizeNote(noteList[idx]);
 
         localStorage.setItem("noteList", JSON.stringify(noteList));
 
@@ -190,9 +253,10 @@ $(document).ready(function () {
     });
 
 
+
     // SAVE EDITED TASK
     $("#editTaskBox #createTaskBtn").click(function () {
-        const index = $(this).data("editIndex");
+        const index = $(this).data("editId");
         const taskList = JSON.parse(localStorage.getItem("taskList"));
 
         // Update task object
@@ -209,6 +273,24 @@ $(document).ready(function () {
         toggleModal("#editTaskBox", false);
         renderDashboardTasks();
     });
+
+
+    // Pin/unpi toggle
+    $(document).on("click", ".pinNoteBtn", function (e) {
+        e.preventDefault();
+
+        const id = Number($(this).closest(".notes-list-item").attr("data-id"));
+        const noteList = JSON.parse(localStorage.getItem("noteList") || "[]");
+
+        const note = noteList.find(n => Number(n.id) === id);
+        if (!note) return;
+
+        note.pinned = !note.pinned;
+
+        localStorage.setItem("noteList", JSON.stringify(noteList));
+        renderNotes();
+    });
+
 
 
     // --- 4. ACCESSIBILITY / THEME ---
