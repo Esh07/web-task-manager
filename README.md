@@ -1,10 +1,8 @@
-
-
-
 # Web Task Manager
+
 <picture>
-  <source media="(prefers-color-scheme: light)" srcset="https://github.com/Esh07/web-task-manager/blob/main/assests/img/homepage.png?raw=true">
-  <img alt="an image of task manager homepage" src="https://github.com/Esh07/web-task-manager/blob/main/assests/img/homepage.png?raw=true">
+  <source media="(prefers-color-scheme: light)" srcset="https://github.com/Esh07/web-task-manager/blob/main/assets/img/homepage.png?raw=true">
+  <img alt="an image of task manager homepage" src="https://github.com/Esh07/web-task-manager/blob/main/assets/img/homepage.png?raw=true">
 </picture>
 
 A simple web-based [task manager application](https://esh07.github.io/web-task-manager). The goal of this project is to help users in managing their daily task and organising tasks in a timely manner. In addition, the project was part of my university coursework for a module called User Interface Design and Evaluation. The course was primarily focused on project-based learning and understanding of user-centred design theories, principles, and processes.
