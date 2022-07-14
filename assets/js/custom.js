@@ -316,7 +316,48 @@ $(document).ready(function () {
         });
     });
 
-    // --- 5. INITIAL RENDER ---
+
+    // === Home page calender (small functionality)
+
+    const $monthSpan = $('.small-calendar-date-text-month');
+    const $daySpan = $('.small-calendar-date-text-day');
+    const $yearSpan = $('.small-calendar-date-text-year');
+    const $dateNums = $('.small-calendar-date-text');  // 7 numbers
+
+    let currentDate = new Date();  // Today
+
+    function updateSmallCalendar(date) {
+        // Header ONLY: "Month Date, Year" 
+        $monthSpan.text(date.toLocaleDateString('en-GB', { month: 'long' }));
+        $daySpan.text(date.getDate() + ',');
+        $yearSpan.text(date.getFullYear());
+
+        // 7 dates Mon-Sun (numbers only)
+        const monday = new Date(date);
+        const dayOfWeek = date.getDay() || 7;
+        monday.setDate(date.getDate() - dayOfWeek + 1);
+
+        $dateNums.each(function (i) {
+            const cellDate = new Date(monday);
+            cellDate.setDate(monday.getDate() + i);
+            $(this).text(cellDate.getDate());
+
+            // Dynamic highlight
+            $(this).parent().toggleClass('today-highlight',
+                cellDate.getDate() === date.getDate() &&
+                cellDate.getMonth() === date.getMonth());
+        });
+    }
+
+    // Next week on Add Task click
+    $('.small-calendar-add-task-btn-box-click').click(function (e) {
+        e.preventDefault();
+        currentDate.setDate(currentDate.getDate() + 7);
+        updateSmallCalendar(currentDate);
+    });
+
+    updateSmallCalendar(currentDate);  
+
     renderDashboardTasks();
     renderNotes();
 

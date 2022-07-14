@@ -235,15 +235,7 @@ header {
   font-weight: 400;
   color: var(--profile-dark-color);
 }
-.small-calendar-day-date-container
-  > .small-calendar-day-date-content:nth-of-type(5)
-  .small-calendar-date-content
-  span {
-  width: 100%;
-  border-radius: 0.5rem;
-  color: var(--bs-white);
-  font-weight: 800 !important;
-}
+
 .small-calendar-day-text {
   color: var(--bs-dark);
 }
@@ -873,3 +865,21 @@ section.notes-container {
     gap: 1rem !important;
   }
 }
+
+/* dynamic highlight (container + text) */
+.small-calendar-date-content.today-highlight {
+  background: var(--bs-dark) !important;
+  border-radius: 0.5rem !important;
+}
+.small-calendar-date-content.today-highlight span {
+  color: var(--bs-white) !important;
+  font-weight: 800 !important;
+}
+
+/* keep bg-dark/text-light in HTML, neutralise it */
+/* .small-calendar-date-content.bg-dark {
+  background-color: transparent !important;
+}
+.small-calendar-date-content.text-light {
+  color: inherit !important;
+} */
