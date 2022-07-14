@@ -49,89 +49,107 @@
 
     <header class="page-header overflow-hidden">
         <div class="header-container">
-            <nav class="navigation-bar">
-                <div class="nav-container">
-                    <div class="nav-content d-flex justify-content-between align-items-center">
-                        <div class="nav-profile d-flex justify-content-between align-items-center flex-row ms-5 gap-5">
-                            <div
-                                class="profile-name-setting-container d-flex justify-content-center align-items-center me-4 gap-4">
+            <!-- Keep your header wrapper, replace just nav -->
+            <header class="page-header overflow-hidden">
+                <div class="header-container">
+                    <nav class="navigation-bar navbar navbar-expand-lg navbar-light p-0 ">
+                        <div class="nav-container container-fluid">
+                            <!-- Top row: profile LEFT + hamburger RIGHT (same line) -->
+                            <div class="d-flex justify-content-between align-items-center mb-2 mb-lg-0 w-100">
+
+                                <!-- Profile left (always visible, full width mobile) -->
                                 <div
-                                    class="profile-icon-container rounded-circle d-flex justify-content-center align-items-center">
-                                    <div class="profile-icon-content">
-                                        <i class="fa-solid fa-user fs-1"></i>
+                                    class="nav-profile d-flex align-items-center gap-3 gap-md-4 flex-lg-grow-0 order-1">
+                                    <div
+                                        class="profile-name-setting-container d-flex justify-content-center align-items-center gap-2 gap-md-3 flex-grow-1 flex-lg-grow-0">
+                                        <div
+                                            class="profile-icon-container rounded-circle d-flex justify-content-center align-items-center">
+                                            <div class="profile-icon-content">
+                                                <i class="fa-solid fa-user fs-2 fs-md-1"></i>
+                                            </div>
+                                        </div>
+                                        <div
+                                            class="profile-name-container d-flex flex-column text-dark ms-2 d-lg-block">
+                                            <span class="fs-4 fs-md-3 fw-light">Eshvar Prakash</span>
+                                            <div
+                                                class="profile-setting-container d-none d-lg-flex align-items-center gap-2 mt-1">
+                                                <i class="fa-light fs-6 fa-cog"></i>
+                                                <span class="profile-setting-text fs-6 fw-lighter">Account
+                                                    settings</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Notification icons (compact right of profile mobile) -->
+                                    <div
+                                        class="notification-icon-container d-flex gap-2 gap-md-3 flex-shrink-0 ms-auto ms-lg-0">
+                                        <i class="fa-light fs-4 fs-md-3 fa-bell" id="notification-bell-icon"></i>
+                                        <a href="#body" id="accesiblity-icon">
+                                            <i class="fa-light fs-4 fs-md-3 fa-universal-access"></i>
+                                        </a>
                                     </div>
                                 </div>
-                                <div class="profile-name-container d-flex flex-column text-dark">
-                                    <span class="fs-3 fw-light">Eshvar Prakash</span>
-                                    <div class="profile-setting-container d-flex align-items-center gap-2">
-                                        <i class="fa-light fs-5 fa-cog"></i>
-                                        <span class="profile-setting-text fs-6 fw-lighter">Account settings</span>
-                                    </div>
-                                </div>
+
+                                <!-- Hamburger RIGHT (same line, shows < lg) -->
+
+                                <button class="navbar-toggler flex-shrink-0 d-lg-none ms-2 order-2 text-dark p-2"
+                                    type="button" data-bs-toggle="collapse" data-bs-target="#navLinks">
+                                    <i class="fas fa-bars fs-2" id="hamburger-icon"></i>
+                                </button>
+
+
                             </div>
 
-                            <div class="notification-icon-container d-flex gap-3">
-                                <i class="fa-light fs-3 fa-bell" id="notification-bell-icon"></i>
-                                <a href="#body" id="accesiblity-icon"><i
-                                        class="fa-light fs-3 fa-universal-access"></i></a>
+                            <!-- Links below (collapses, hidden until hamburger clicked) -->
+                            <div class="nav-links text-reset text-dark navbar-collapse collapse pt-2 pt-lg-0"
+                                id="navLinks">
+                                <ul
+                                    class="navbar-nav d-flex list-unstyled justify-content-center w-100 gap-2 gap-md-0 flex-column flex-lg-row mb-0">
+                                    <li class="nav-item w-100 w-lg-auto p-ld-2 p-md-3 p-lg-5 flex-fill flex-lg-grow-0">
+                                        <a href="index.html"
+                                            class="nav-link d-flex align-items-center justify-content-center gap-2 gap-md-3 h-100 text-decoration-none">
+                                            <div class="nav-link-icon-content">
+                                                <i class="fa-solid fs-3 fs-md-2 fa-grid-horizontal"></i>
+                                            </div>
+                                            <div class="nav-link-text-content fw-regular fs-5 fs-md-4">Dashboard</div>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item p-2 p-md-3 p-lg-5 flex-fill flex-lg-grow-0 nav-link-active">
+                                        <a href="task.html"
+                                            class="nav-link d-flex align-items-center justify-content-center gap-2 gap-md-3 h-100 text-decoration-none">
+                                            <div class="nav-link-icon-content">
+                                                <i class="fa-solid fs-3 fs-md-2 fa-list-check"></i>
+                                            </div>
+                                            <div class="nav-link-text-content fw-regular fs-5 fs-md-4">Task</div>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item p-2 p-md-3 p-lg-5 flex-fill flex-lg-grow-0">
+                                        <a href="calendar.html"
+                                            class="nav-link d-flex align-items-center justify-content-center gap-2 gap-md-3 h-100 text-decoration-none">
+                                            <div class="nav-link-icon-content">
+                                                <i class="fa-light fs-3 fs-md-2 fa-calendar-days"></i>
+                                            </div>
+                                            <div class="nav-link-text-content fw-light fs-5 fs-md-4">Calendar</div>
+                                        </a>
+                                    </li>
+                                </ul>
                             </div>
-                        </div>
-                        <div class="nav-links text-reset text-dark">
-                            <ul class="d-flex list-unstyled w-100">
-                                <li class="p-5 nav-link-active">
-                                    <a href="index.html">
-                                        <div class="nav-link-container d-flex align-items-center gap-3 fs-5">
 
-                                            <div class="nav-link-icon-content">
-                                                <i class="fa-solid fs-2 fa-grid-horizontal"></i>
-                                            </div>
-                                            <!-- fontawesome dashbaord icon -->
-                                            <div class="nav-link-text-content fw-regular">
-                                                Dashboard
-                                            </div>
-                                        </div>
-                                    </a>
-
-                                </li>
-                                <li class="p-5 ">
-                                    <a href="task.html">
-                                        <div class="nav-link-container d-flex align-items-center gap-3 fs-5">
-                                            <div class="nav-link-icon-content">
-                                                <i class="fa-light fs-2 fa-list-check"></i>
-                                            </div>
-                                            <!-- fontawesome dashbaord icon -->
-                                            <div class="nav-link-text-content fw-light">
-                                                Task
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li class="p-5">
-                                    <a href="calendar.html">
-                                        <div class="nav-link-container d-flex align-items-center gap-3 fs-5">
-                                            <div class="nav-link-icon-content">
-                                                <i class="fa-light fs-2 fa-calendar-days"></i>
-                                            </div>
-                                            <!-- fontawesome dashbaord icon -->
-                                            <div class="nav-link-text-content fw-light">
-                                                Calendar
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-                            </ul>
                         </div>
-                    </div>
+                    </nav>
                 </div>
-            </nav>
+            </header>
+
+
         </div>
     </header>
-    <main class="main-content-container d-flex flex-column mx-5">
+    <main class="main-content-container d-flex flex-column mx-md-4 mx-5">
         <!-- a section for greeting and page heading -->
         <section class="greeting-section text-dark py-3 my-2">
             <div class="greeting-container align-items-center d-flex">
                 <div class="greeting-content col-md-4">
-                    <span class="greeting-text fs-5"><span class="fw-bold" id="greeting-msg">Good Morning</span> Eshvar
+                    <span class="greeting-text fs-5 fs-md-6 fs-lg-5"><span class="fw-bold" id="greeting-msg">Good
+                            Morning</span> Eshvar
                         Prakash</span>
                 </div>
                 <div class="greeting-content text-center col-md-4">
@@ -141,7 +159,7 @@
                 </div>
             </div>
         </section>
-        <div class="main-content-content text-dark">
+        <div class="main-content-content text-dark pb-md-3 pb-sm-2 ">
             <div class="my-task-heading">
                 <div class="my-task-heading-content">
                     <span class="my-task-heading-text">
@@ -151,55 +169,57 @@
             </div>
         </div>
 
-        <div class="task-notes-calendar-container">
+        <div class="row task-notes-calendar-container g-4">
 
-            <!-- task tab section -->
-            <div class="task-tab-containetr text-dark bg-light">
-                <div class="task-tab-content mx-4 py-4 rounded">
-                    <!-- Tabs navs -->
-                    <ul class="nav nav-tabs  d-flex align-items-center justify-content-center gap-5 py-3 " id="ex1"
-                        role="tablist">
-                        <li class="nav-item" role="presentation">
-                            <a class="nav-link active" id="ex1-tab-1" data-mdb-toggle="tab" href="#ex1-tabs-1"
-                                role="tab" aria-controls="ex1-tabs-1" aria-selected="true">work</a>
-                        </li>
-                        <li class="nav-item" role="presentation">
-                            <a class="nav-link" id="ex1-tab-2" data-mdb-toggle="tab" href="#ex1-tabs-2" role="tab"
-                                aria-controls="ex1-tabs-2" aria-selected="false">personal</a>
-                        </li>
-                    </ul>
-                    <!-- Tabs navs -->
-                    <div
-                        class="task-add-btn-and-today-txt-container container  px-4 my-2 d-flex justify-content-between align-items-center">
-                        <div class="today-text-container">
-                            <span class="today-text fs-5">Today</span>
+            <div class="col-12 col-lg-4 col-md-6">
+                <!-- task tab section -->
+                <div class="task-tab-containetr text-dark bg-light">
+                    <div class="task-tab-content  mx-md-2 mx-4  py-md-3 py-4 rounded">
+                        <!-- Tabs navs -->
+                        <ul class="nav nav-tabs  d-flex align-items-center justify-content-center gap-5 py-3 " id="ex1"
+                            role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <a class="nav-link active fs-md-5" id="ex1-tab-1" data-mdb-toggle="tab"
+                                    href="#ex1-tabs-1" role="tab" aria-controls="ex1-tabs-1"
+                                    aria-selected="true">work</a>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <a class="nav-link" id="ex1-tab-2" data-mdb-toggle="tab" href="#ex1-tabs-2" role="tab"
+                                    aria-controls="ex1-tabs-2" aria-selected="false">personal</a>
+                            </li>
+                        </ul>
+                        <!-- Tabs navs -->
+                        <div
+                            class="task-add-btn-and-today-txt-container container  px-4 my-2 d-flex justify-content-between align-items-center">
+                            <div class="today-text-container">
+                                <span class="today-text fs-5">Today</span>
+                            </div>
+                            <div class="task-add-btn-container">
+                                <a class="btn btn-primary btn-sm d-flex align-items-center gap-2 py-2 px-3 add-task-btn-on-menu"
+                                    href="#body">
+                                    <!-- add icon and text Add task -->
+                                    <div class="task-add-btn-icon-container">
+                                        <i class="fas fa-plus"></i>
+                                    </div>
+                                    <div class="task-add-btn-text-container">
+                                        <span class="add-task-text fs-6">Add Task</span>
+
+                                    </div>
+                                </a>
+                            </div>
+
                         </div>
-                        <div class="task-add-btn-container">
-                            <a class="btn btn-primary btn-sm d-flex align-items-center gap-2 py-2 px-3 add-task-btn-on-menu"
-                                href="#body">
-                                <!-- add icon and text Add task -->
-                                <div class="task-add-btn-icon-container">
-                                    <i class="fas fa-plus"></i>
-                                </div>
-                                <div class="task-add-btn-text-container">
-                                    <span class="add-task-text fs-6">Add Task</span>
 
-                                </div>
-                            </a>
-                        </div>
+                        <!-- Tabs content -->
+                        <div class="tab-content px-md-2 px-4 mt-md-3 mt-4 row " id="ex1-content">
 
-                    </div>
+                            <!-- Tab 1 => Work -->
+                            <div class="tab-pane fade show active" id="ex1-tabs-1" role="tabpanel"
+                                aria-labelledby="ex1-tab-1">
+                                <div class="work-tab-list-of-task-container ">
+                                    <ul class="work-tab-list-of-task-items list-unstyled d-flex flex-column ">
 
-                    <!-- Tabs content -->
-                    <div class="tab-content px-4 mt-4  " id="ex1-content">
-
-                        <!-- Tab 1 => Work -->
-                        <div class="tab-pane fade show active" id="ex1-tabs-1" role="tabpanel"
-                            aria-labelledby="ex1-tab-1">
-                            <div class="work-tab-list-of-task-container ">
-                                <ul class="work-tab-list-of-task-items list-unstyled d-flex flex-column ">
-
-                                    <!-- 
+                                        <!-- 
                                 <li class="work-tab-task-item">
                                     <div class="work-tab-task-item-content row ">
                                         <div class="work-task-item-left-content col-md-4 d-flex justify-content-evenly align-items-center">
@@ -282,25 +302,27 @@
                                         </div>
                                     </div>
                                 </li> -->
-                                </ul>
+                                    </ul>
 
-                                <div class="show-all-task-container d-flex justify-content-center align-items-center">
-                                    <a href="task.html" class="show-all-task-link text-dark">
-                                        <span class="show-all-task-text border-bottom border-dark border-2">Show all
-                                            tasks</span>
-                                    </a>
+                                    <div
+                                        class="show-all-task-container d-flex justify-content-center align-items-center">
+                                        <a href="task.html" class="show-all-task-link text-dark">
+                                            <span class="show-all-task-text border-bottom border-dark border-2">Show all
+                                                tasks</span>
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
 
-                        <!-- Tab 2 => Personal -->
-                        <div class="tab-pane fade" id="ex1-tabs-2" role="tabpanel" aria-labelledby="ex1-tab-2">
-                            <div class="work-tab-list-of-task-container ">
-                                <ul
-                                    class="personal-tab-list-of-task-items personal-tab-list-of-task-items list-unstyled d-flex flex-column ">
-                                </ul>
+                            <!-- Tab 2 => Personal -->
+                            <div class="tab-pane fade" id="ex1-tabs-2" role="tabpanel" aria-labelledby="ex1-tab-2">
+                                <div class="work-tab-list-of-task-container ">
+                                    <ul
+                                        class="personal-tab-list-of-task-items personal-tab-list-of-task-items list-unstyled d-flex flex-column ">
+                                    </ul>
+                                </div>
+
                             </div>
-
                         </div>
                     </div>
                 </div>
@@ -308,19 +330,19 @@
             <!-- Tabs content -->
 
 
-            <!-- task notes section -->
-            <section class="notes-container  py-4 bg-light border border-dark">
-                <div class="notes-content-box d-flex flex-column h-100 gap-4">
-                    <div class="note-section-heading-and-list-of-notes">
-                        <div class="notes-section-head d-flex justify-content-center align-items-center py-2">
-                            <h2 class="note-heading-txt fw-bolder text-dark fs-2">
-                                Notes
-                            </h2>
-                        </div>
-                        <div class="notes-list-container ">
-                            <ul class="list-of-notes list-unstyled notes-list  mx-5 d-flex flex-column gap-3 h-20 "
-                                style="height:20rem">
-                                <!-- <li class="notes-list-item py-3 px-4 rounded ">
+            <div class="col-12 col-lg-4 col-md-6">
+                <!-- task notes section -->
+                <section class="notes-container  py-4 bg-light border border-dark">
+                    <div class="notes-content-box d-flex flex-column h-100 gap-4">
+                        <div class="note-section-heading-and-list-of-notes">
+                            <div class="notes-section-head d-flex justify-content-center align-items-center py-2">
+                                <h2 class="note-heading-txt fw-bolder text-dark fs-2">
+                                    Notes
+                                </h2>
+                            </div>
+                            <div class="notes-list-container ">
+                                <ul class="list-of-notes list-unstyled notes-list  mx-5 d-flex flex-column gap-3 h-20 ">
+                                    <!-- <li class="notes-list-item py-3 px-4 rounded ">
                                     <div class="notes-list-item-content d-flex flex-column gap-1">
                                         <div class="notes-list-item-head d-flex justify-content-between ">
                                             <div
@@ -354,238 +376,242 @@
                                     </div>
                                 </li> -->
 
-                            </ul>
+                                </ul>
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="notes-add-note-container d-flex justify-content-center align-items-center">
-                        <a href="#body" class="notes-add-note-link text-dark d-flex justify-content-between gap-2">
-                            <div class="notes-add-note-link-link-icon">
-                                <i class="fa-regular fa-plus"></i>
-                            </div>
-                            <div class="notes-add-note-link-link-text">
-                                <span class="notes-add-note-text">
-                                    <!-- add icon -->
-                                    Add note
-                                </span>
-                            </div>
-
-                        </a>
-                    </div>
-                </div>
-            </section>
-            <!-- task notes section -->
-
-            <!-- task calendar section -->
-            <section class="calendar-container px-3 mx-3">
-
-                <div class="small-calendar-container h-100">
-                    <div class="small-calendar-content d-flex justify-content-evenly h-100 flex-column">
-                        <div class="small-calendar-head-container d-flex justify-content-between">
-                            <div class="small-calendar-head-date-and-add-task-btn">
-                                <div class="small-calendar-date-content-big">
-                                    <!--format March 11, 2020  -->
-                                    <div
-                                        class="small-calendar-date-text d-flex gap-1 fs-5 text-dark fw-light py-0 my-0">
-                                        <span class="small-calendar-date-text-month">
-                                            March
-                                        </span>
-                                        <span class="small-calendar-date-text-day">
-                                            11,
-                                        </span>
-                                        <span class="small-calendar-date-text-year">
-                                            2022
-                                        </span>
-                                    </div>
-
-                                    <div class="small-calendar-date-today-txt-content py-0 my-0">
-                                        <span
-                                            class="small-calendar-date-today-txt text-dark fs-4 text-uppercase fw-bolder">
-                                            Today
-                                        </span>
-                                    </div>
+                        <div class="notes-add-note-container d-flex justify-content-center align-items-center">
+                            <a href="#body" class="notes-add-note-link text-dark d-flex justify-content-between gap-2">
+                                <div class="notes-add-note-link-link-icon">
+                                    <i class="fa-regular fa-plus"></i>
                                 </div>
-                            </div>
-
-                            <div class="small-calendar-add-task-btn-content d-flex align-items-center text-light px-4">
-                                <a href="#body" class="small-calendar-add-task-btn-box-click">
-                                    <div
-                                        class="small-calendar-add-task-btn-box btn text-light bg-dark d-flex px-3 py-2">
-
-                                        <div class="small-calendar-add-task-btn">
-                                            <i class="fas fa-plus"></i>
-                                        </div>
-
-                                        <div class="small-calendar-add-task-txt">
-                                            <span class="small-calendar-add-task-txt-text">
-                                                Add Task
-                                            </span>
-                                        </div>
-                                    </div>
-                                </a>
-
-
-                            </div>
-                        </div>
-
-                        <div class="small-calendar-days-dats-container">
-                            <div class="small-calendar-days-date-box w-100">
-                                <div
-                                    class="small-calendar-day-date-container d-flex justify-content-between align-items-center">
-                                    <div class="small-calendar-day-date-content">
-                                        <div class="small-calendar-day-content">
-                                            <span class="small-calendar-day-text">
-                                                Mon
-                                            </span>
-                                        </div>
-                                        <div class="small-calendar-date-content">
-                                            <span class="small-calendar-date-text">
-                                                7
-                                            </span>
-                                        </div>
-                                    </div>
-
-                                    <div class="small-calendar-day-date-content ">
-                                        <div class="small-calendar-day-content">
-                                            <span class="small-calendar-day-text">
-                                                Tue
-                                            </span>
-                                        </div>
-                                        <div class="small-calendar-date-content">
-                                            <span class="small-calendar-date-text">
-                                                8
-                                            </span>
-                                        </div>
-                                    </div>
-
-                                    <div class="small-calendar-day-date-content ">
-                                        <div class="small-calendar-day-content">
-                                            <span class="small-calendar-day-text">
-                                                Wed
-                                            </span>
-                                        </div>
-                                        <div class="small-calendar-date-content">
-                                            <span class="small-calendar-date-text">
-                                                9
-                                            </span>
-                                        </div>
-                                    </div>
-
-                                    <div class="small-calendar-day-date-content ">
-                                        <div class="small-calendar-day-content">
-                                            <span class="small-calendar-day-text">
-                                                Thu
-                                            </span>
-                                        </div>
-                                        <div class="small-calendar-date-content">
-                                            <span class="small-calendar-date-text">
-                                                10
-                                            </span>
-                                        </div>
-                                    </div>
-
-                                    <div class="small-calendar-day-date-content ">
-                                        <div class="small-calendar-day-content">
-                                            <span class="small-calendar-day-text">
-                                                Fri
-                                            </span>
-                                        </div>
-                                        <div class="small-calendar-date-content bg-dark text-light">
-                                            <span class="small-calendar-date-text">
-                                                11
-                                            </span>
-                                        </div>
-                                    </div>
-
-                                    <div class="small-calendar-day-date-content ">
-                                        <div class="small-calendar-day-content">
-                                            <span class="small-calendar-day-text">
-                                                Sat
-                                            </span>
-                                        </div>
-                                        <div class="small-calendar-date-content">
-                                            <span class="small-calendar-date-text">
-                                                12
-                                            </span>
-                                        </div>
-                                    </div>
-
-                                    <div class="small-calendar-day-date-content ">
-                                        <div class="small-calendar-day-content">
-                                            <span class="small-calendar-day-text">
-                                                Sun
-                                            </span>
-                                        </div>
-                                        <div class="small-calendar-date-content">
-                                            <span class="small-calendar-date-text">
-                                                13
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="slot-availablity-container">
-                            <div class="slot-availablity-content">
-                                <div
-                                    class="slot-availablity-head d-flex justify-content-center align-items-center text-dark fs-3 fw-bold">
-                                    <span class="slot-availablity-head-text">
-                                        Availablity
+                                <div class="notes-add-note-link-link-text">
+                                    <span class="notes-add-note-text">
+                                        <!-- add icon -->
+                                        Add note
                                     </span>
                                 </div>
-                                <div class="slot-availablity-times-container d-flex flex-column gap-3">
-                                    <div class="slot-available-time-container d-flex flex-column gap-1">
-                                        <div class="slot-available-time-head">
-                                            <span>Today</span>
+
+                            </a>
+                        </div>
+                    </div>
+                </section>
+                <!-- task notes section -->
+            </div>
+
+            <div class="col-12 col-lg-4 col-md-3 d-none d-md-none d-lg-block">
+                <!-- task calendar section -->
+                <section class="calendar-container px-3 mx-3">
+
+                    <div class="small-calendar-container h-100">
+                        <div class="small-calendar-content d-flex justify-content-evenly h-100 flex-column">
+                            <div class="small-calendar-head-container d-flex justify-content-between">
+                                <div class="small-calendar-head-date-and-add-task-btn">
+                                    <div class="small-calendar-date-content-big">
+                                        <!--format March 11, 2020  -->
+                                        <div
+                                            class="small-calendar-date-text d-flex gap-1 fs-5 text-dark fw-light py-0 my-0">
+                                            <span class="small-calendar-date-text-month">
+                                                March
+                                            </span>
+                                            <span class="small-calendar-date-text-day">
+                                                11,
+                                            </span>
+                                            <span class="small-calendar-date-text-year">
+                                                2022
+                                            </span>
                                         </div>
-                                        <div class="slot-available-time-content d-flex justify-content-between">
-                                            <div class="slot-available-time">
-                                                <div class="slot-available-time-box">
-                                                    <span>
-                                                        12:00
-                                                    </span>
-                                                </div>
+
+                                        <div class="small-calendar-date-today-txt-content py-0 my-0">
+                                            <span
+                                                class="small-calendar-date-today-txt text-dark fs-4 text-uppercase fw-bolder">
+                                                Today
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div
+                                    class="small-calendar-add-task-btn-content d-flex align-items-center text-light px-4">
+                                    <a href="#body" class="small-calendar-add-task-btn-box-click">
+                                        <div
+                                            class="small-calendar-add-task-btn-box btn text-light bg-dark d-flex px-3 py-2">
+
+                                            <div class="small-calendar-add-task-btn">
+                                                <i class="fas fa-plus"></i>
                                             </div>
-                                            <div class="slot-available-time ">
-                                                <div class="slot-available-time-box">
-                                                    <span>
-                                                        12:30
-                                                    </span>
-                                                </div>
+
+                                            <div class="small-calendar-add-task-txt">
+                                                <span class="small-calendar-add-task-txt-text">
+                                                    Add Task
+                                                </span>
                                             </div>
-                                            <div class="slot-available-time">
-                                                <div class="slot-available-time-box">
-                                                    <span>
-                                                        01:00
-                                                    </span>
-                                                </div>
+                                        </div>
+                                    </a>
+
+
+                                </div>
+                            </div>
+
+                            <div class="small-calendar-days-dats-container">
+                                <div class="small-calendar-days-date-box w-100">
+                                    <div
+                                        class="small-calendar-day-date-container d-flex justify-content-between align-items-center">
+                                        <div class="small-calendar-day-date-content">
+                                            <div class="small-calendar-day-content">
+                                                <span class="small-calendar-day-text">
+                                                    Mon
+                                                </span>
+                                            </div>
+                                            <div class="small-calendar-date-content">
+                                                <span class="small-calendar-date-text">
+                                                    7
+                                                </span>
+                                            </div>
+                                        </div>
+
+                                        <div class="small-calendar-day-date-content ">
+                                            <div class="small-calendar-day-content">
+                                                <span class="small-calendar-day-text">
+                                                    Tue
+                                                </span>
+                                            </div>
+                                            <div class="small-calendar-date-content">
+                                                <span class="small-calendar-date-text">
+                                                    8
+                                                </span>
+                                            </div>
+                                        </div>
+
+                                        <div class="small-calendar-day-date-content ">
+                                            <div class="small-calendar-day-content">
+                                                <span class="small-calendar-day-text">
+                                                    Wed
+                                                </span>
+                                            </div>
+                                            <div class="small-calendar-date-content">
+                                                <span class="small-calendar-date-text">
+                                                    9
+                                                </span>
+                                            </div>
+                                        </div>
+
+                                        <div class="small-calendar-day-date-content ">
+                                            <div class="small-calendar-day-content">
+                                                <span class="small-calendar-day-text">
+                                                    Thu
+                                                </span>
+                                            </div>
+                                            <div class="small-calendar-date-content">
+                                                <span class="small-calendar-date-text">
+                                                    10
+                                                </span>
+                                            </div>
+                                        </div>
+
+                                        <div class="small-calendar-day-date-content ">
+                                            <div class="small-calendar-day-content">
+                                                <span class="small-calendar-day-text">
+                                                    Fri
+                                                </span>
+                                            </div>
+                                            <div class="small-calendar-date-content bg-dark text-light">
+                                                <span class="small-calendar-date-text">
+                                                    11
+                                                </span>
+                                            </div>
+                                        </div>
+
+                                        <div class="small-calendar-day-date-content ">
+                                            <div class="small-calendar-day-content">
+                                                <span class="small-calendar-day-text">
+                                                    Sat
+                                                </span>
+                                            </div>
+                                            <div class="small-calendar-date-content">
+                                                <span class="small-calendar-date-text">
+                                                    12
+                                                </span>
+                                            </div>
+                                        </div>
+
+                                        <div class="small-calendar-day-date-content ">
+                                            <div class="small-calendar-day-content">
+                                                <span class="small-calendar-day-text">
+                                                    Sun
+                                                </span>
+                                            </div>
+                                            <div class="small-calendar-date-content">
+                                                <span class="small-calendar-date-text">
+                                                    13
+                                                </span>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="slot-available-time-container">
-                                        <div class="slot-available-time-head">
-                                            <span>Tomorrow</span>
+                                </div>
+                            </div>
+                            <div class="slot-availablity-container">
+                                <div class="slot-availablity-content">
+                                    <div
+                                        class="slot-availablity-head d-flex justify-content-center align-items-center text-dark fs-3 fw-bold">
+                                        <span class="slot-availablity-head-text">
+                                            Availablity
+                                        </span>
+                                    </div>
+                                    <div class="slot-availablity-times-container d-flex flex-column gap-3">
+                                        <div class="slot-available-time-container d-flex flex-column gap-1">
+                                            <div class="slot-available-time-head">
+                                                <span>Today</span>
+                                            </div>
+                                            <div class="slot-available-time-content d-flex justify-content-between">
+                                                <div class="slot-available-time">
+                                                    <div class="slot-available-time-box">
+                                                        <span>
+                                                            12:00
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                                <div class="slot-available-time ">
+                                                    <div class="slot-available-time-box">
+                                                        <span>
+                                                            12:30
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                                <div class="slot-available-time">
+                                                    <div class="slot-available-time-box">
+                                                        <span>
+                                                            01:00
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div class="slot-available-time-content d-flex justify-content-between">
-                                            <div class="slot-available-time">
-                                                <div class="slot-available-time-box">
-                                                    <span>
-                                                        12:00
-                                                    </span>
-                                                </div>
+                                        <div class="slot-available-time-container">
+                                            <div class="slot-available-time-head">
+                                                <span>Tomorrow</span>
                                             </div>
-                                            <div class="slot-available-time">
-                                                <div class="slot-available-time-box">
-                                                    <span>
-                                                        12:30
-                                                    </span>
+                                            <div class="slot-available-time-content d-flex justify-content-between">
+                                                <div class="slot-available-time">
+                                                    <div class="slot-available-time-box">
+                                                        <span>
+                                                            12:00
+                                                        </span>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <div class="slot-available-time">
-                                                <div class="slot-available-time-box">
-                                                    <span>
-                                                        01:00
-                                                    </span>
+                                                <div class="slot-available-time">
+                                                    <div class="slot-available-time-box">
+                                                        <span>
+                                                            12:30
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                                <div class="slot-available-time">
+                                                    <div class="slot-available-time-box">
+                                                        <span>
+                                                            01:00
+                                                        </span>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -593,11 +619,11 @@
                                 </div>
                             </div>
                         </div>
+
                     </div>
 
-                </div>
-
-            </section>
+                </section>
+            </div>
 
         </div>
 
@@ -1179,8 +1205,8 @@
                 li.className = 'work-tab-task-item';
                 li.setAttribute('data-index', i);
 
-                li.innerHTML = `        <div class="work-tab-task-item-content row ">
-                                            <div class="work-task-item-left-content col-md-4 d-flex justify-content-evenly align-items-center">
+                li.innerHTML = `        <div class="work-tab-task-item-content row">
+                                            <div class="work-task-item-left-content col-5 col-md-4 col-sm-4 d-flex justify-content-evenly align-items-center">
                                                 <div class="work-task-item-icon-container">
                                                     <!-- checkbox icon -->
                                                     <!-- <i class="fas fa-check-circle"></i>
@@ -1193,16 +1219,16 @@
                                                      </div>
                                                 </div>
                                                 <div class="work-task-item-time-container">
-                                                    <span class="work-task-item-time fs-5">`+ task.startTime + `</span>
+                                                    <span class="work-task-item-time fs-5 fs-md-6 fs-sm-6">`+ task.startTime + `</span>
                                                 </div>
                                             </div>
-                                            <div class="work-task-item-right-content col-md-8 d-flex  justify-content-between align-items-center px-3 py-1">
+                                            <div class="work-task-item-right-content col-7 col-md-8 col-sm-8 d-flex  justify-content-between align-items-center px-3 py-1">
                                                 <div class="work-task-item-category-title-container d-flex flex-column align-items-start">
                                                 <div class="work-task-item-category-container">
                                                     <span class="work-task-item-category fw-lighter fs-6">`+ task.category + `</span>
                                                 </div>
                                                 <div class="work-task-item-title-container">
-                                                    <span class="work-task-item-title fs-4">`+ task.taskTitle + `</span>
+                                                    <span class="work-task-item-title fs-md-5 fs-4 fw-md-bold fs-lg-3">`+ task.taskTitle + `</span>
                                                 </div>
                                             </div>
 

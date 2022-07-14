@@ -43,79 +43,86 @@
 
     <header class="page-header overflow-hidden">
         <div class="header-container">
-            <nav class="navigation-bar">
-                <div class="nav-container">
-                    <div class="nav-content d-flex justify-content-between align-items-center">
-                        <div class="nav-profile d-flex justify-content-between align-items-center flex-row ms-5 gap-5">
+            <nav class="navigation-bar navbar navbar-expand-lg navbar-light p-0 ">
+                <div class="nav-container container-fluid">
+                    <!-- Top row: profile LEFT + hamburger RIGHT (same line) -->
+                    <div class="d-flex justify-content-between align-items-center mb-2 mb-lg-0 w-100">
+
+                        <!-- Profile left (always visible, full width mobile) -->
+                        <div class="nav-profile d-flex align-items-center gap-3 gap-md-4 flex-lg-grow-0 order-1">
                             <div
-                                class="profile-name-setting-container d-flex justify-content-center align-items-center me-4 gap-4">
+                                class="profile-name-setting-container d-flex justify-content-center align-items-center gap-2 gap-md-3 flex-grow-1 flex-lg-grow-0">
                                 <div
                                     class="profile-icon-container rounded-circle d-flex justify-content-center align-items-center">
                                     <div class="profile-icon-content">
-                                        <i class="fa-solid fa-user fs-1"></i>
+                                        <i class="fa-solid fa-user fs-2 fs-md-1"></i>
                                     </div>
                                 </div>
-                                <div class="profile-name-container d-flex flex-column text-dark">
-                                    <span class="fs-3 fw-light">Eshvar Prakash</span>
-                                    <div class="profile-setting-container d-flex align-items-center gap-2">
-                                        <i class="fa-light fs-5 fa-cog"></i>
-                                        <span class="profile-setting-text fs-6 fw-lighter">Account settings</span>
+                                <div class="profile-name-container d-flex flex-column text-dark ms-2 d-lg-block">
+                                    <span class="fs-4 fs-md-3 fw-light">Eshvar Prakash</span>
+                                    <div
+                                        class="profile-setting-container d-none d-lg-flex align-items-center gap-2 mt-1">
+                                        <i class="fa-light fs-6 fa-cog"></i>
+                                        <span class="profile-setting-text fs-6 fw-lighter">Account
+                                            settings</span>
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="notification-icon-container d-flex gap-3">
-                                <i class="fa-light fs-3 fa-bell" id="notification-bell-icon"></i>
-                                <a href="#body" id="accesiblity-icon"><i
-                                        class="fa-light fs-3 fa-universal-access"></i></a>
+                            <!-- Notification icons (compact right of profile mobile) -->
+                            <div
+                                class="notification-icon-container d-flex gap-2 gap-md-3 flex-shrink-0 ms-auto ms-lg-0">
+                                <i class="fa-light fs-4 fs-md-3 fa-bell" id="notification-bell-icon"></i>
+                                <a href="#body" id="accesiblity-icon">
+                                    <i class="fa-light fs-4 fs-md-3 fa-universal-access"></i>
+                                </a>
                             </div>
                         </div>
-                        <div class="nav-links text-reset text-dark">
-                            <ul class="d-flex list-unstyled w-100">
-                                <li class="p-5 ">
-                                    <a href="index.html">
-                                        <div class="nav-link-container d-flex align-items-center gap-3 fs-5">
 
-                                            <div class="nav-link-icon-content">
-                                                <i class="fa-light fs-2 fa-grid-horizontal"></i>
-                                            </div>
-                                            <!-- fontawesome dashbaord icon -->
-                                            <div class="nav-link-text-content fw-light">
-                                                Dashboard
-                                            </div>
-                                        </div>
-                                    </a>
+                        <!-- Hamburger RIGHT (same line, shows < lg) -->
 
-                                </li>
-                                <li class="p-5 ">
-                                    <a href="task.html">
-                                        <div class="nav-link-container d-flex align-items-center gap-3 fs-5">
-                                            <div class="nav-link-icon-content">
-                                                <i class="fa-light fs-2 fa-list-check"></i>
-                                            </div>
-                                            <!-- fontawesome dashbaord icon -->
-                                            <div class="nav-link-text-content fw-regular">
-                                                Task
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li class="p-5 nav-link-active">
-                                    <a href="calendar.html">
-                                        <div class="nav-link-container d-flex align-items-center gap-3 fs-5">
-                                            <div class="nav-link-icon-content">
-                                                <i class="fa-solid fs-2 fa-calendar-days"></i>
-                                            </div>
-                                            <!-- fontawesome dashbaord icon -->
-                                            <div class="nav-link-text-content fw-light">
-                                                Calendar
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
+                        <button class="navbar-toggler flex-shrink-0 d-lg-none ms-2 order-2 text-dark p-2" type="button"
+                            data-bs-toggle="collapse" data-bs-target="#navLinks">
+                            <i class="fas fa-bars fs-2" id="hamburger-icon"></i>
+                        </button>
+
+
                     </div>
+
+                    <!-- Links below (collapses, hidden until hamburger clicked) -->
+                    <div class="nav-links text-reset text-dark navbar-collapse collapse pt-2 pt-lg-0" id="navLinks">
+                        <ul
+                            class="navbar-nav d-flex list-unstyled justify-content-center w-100 gap-2 gap-md-0 flex-column flex-lg-row mb-0">
+                            <li class="nav-item w-100 w-lg-auto p-ld-2 p-md-3 p-lg-5 flex-fill flex-lg-grow-0">
+                                <a href="index.html"
+                                    class="nav-link d-flex align-items-center justify-content-center gap-2 gap-md-3 h-100 text-decoration-none">
+                                    <div class="nav-link-icon-content">
+                                        <i class="fa-solid fs-3 fs-md-2 fa-grid-horizontal"></i>
+                                    </div>
+                                    <div class="nav-link-text-content fw-regular fs-5 fs-md-4">Dashboard</div>
+                                </a>
+                            </li>
+                            <li class="nav-item p-2 p-md-3 p-lg-5 flex-fill flex-lg-grow-0 nav-link-active">
+                                <a href="task.html"
+                                    class="nav-link d-flex align-items-center justify-content-center gap-2 gap-md-3 h-100 text-decoration-none">
+                                    <div class="nav-link-icon-content">
+                                        <i class="fa-solid fs-3 fs-md-2 fa-list-check"></i>
+                                    </div>
+                                    <div class="nav-link-text-content fw-regular fs-5 fs-md-4">Task</div>
+                                </a>
+                            </li>
+                            <li class="nav-item p-2 p-md-3 p-lg-5 flex-fill flex-lg-grow-0">
+                                <a href="calendar.html"
+                                    class="nav-link d-flex align-items-center justify-content-center gap-2 gap-md-3 h-100 text-decoration-none">
+                                    <div class="nav-link-icon-content">
+                                        <i class="fa-light fs-3 fs-md-2 fa-calendar-days"></i>
+                                    </div>
+                                    <div class="nav-link-text-content fw-light fs-5 fs-md-4">Calendar</div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
                 </div>
             </nav>
         </div>

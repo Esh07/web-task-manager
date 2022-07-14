@@ -131,7 +131,7 @@ header {
 }
 
 .nav-links ul li {
-  width: 15rem !important;
+  /* width: 15rem !important; */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -354,10 +354,9 @@ header {
 section.notes-container {
   border-radius: var(--border-radius-larger) !important;
 }
-.main-content-container .task-notes-calendar-container {
-  display: grid;
-  grid-template-columns: 1fr 0.75fr 1fr;
-  gap: 2rem;
+.notes-list {
+  max-height: 50vh;
+  overflow-y: auto;
 }
 
 .main-content-container .task-each-progress-container {
@@ -553,12 +552,13 @@ section.notes-container {
 #editTaskBox .add-task-pop-box,
 #addNoteBox .add-task-pop-box,
 #editNoteBox .add-task-pop-box {
-  width: 35rem;
-  height: 80vh;
+  width: min(95vw, 35rem);
+  height: auto;
+  max-height: 90vh;
+  padding: 1.5rem 1.5rem;
   position: relative;
   background-color: var(--bs-white);
   border-radius: var(--border-radius-larger);
-  padding: 2rem 4rem;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 #addTaskBox .add-task-pop-box-cancel-icon-btn-container,
@@ -569,7 +569,7 @@ section.notes-container {
   top: 1rem;
   right: 1.25rem;
   width: 3rem;
-  height: 3rem;
+
   background-color: #eaeaeb;
   border-radius: 0.5rem;
 }
@@ -859,4 +859,17 @@ section.notes-container {
   flex: 1;
   min-height: 0; /* key for flex scrolling */
   overflow-y: auto;
+}
+
+@media (max-width: 576px) {
+  .greeting-text.fs-2,
+  .note-heading-txt.fs-2,
+  .pending-task-heading-txt.fs-5 {
+    font-size: 1.25rem !important;
+  }
+
+  .task-head-calendar-blocks-container {
+    padding-inline: 1rem !important;
+    gap: 1rem !important;
+  }
 }
