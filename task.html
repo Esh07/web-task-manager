@@ -37,9 +37,14 @@
 
     <link href="" rel="stylesheet" id="theme-link">
 
+
+    <script src="assets/js/simpleData.js"></script>
+
+    <script src="assets/js/custom.js"></script>
+
 </head>
 
-<body id="body">
+<body id="body" data-page="task">
 
     <header class="page-header overflow-hidden">
         <div class="header-container">
@@ -127,7 +132,7 @@
             </nav>
         </div>
     </header>
-    <main class="main-content-container d-flex flex-column mx-5 gap-3">
+    <main class="container-fluid px-2 px-sm-3 px-md-4 px-lg-5 py-3">
         <!-- a section for greeting and page heading -->
         <section class="greeting-section text-dark py-1 my-2 d-flex align-items-center justify-content-center">
             <div class="greeting-container">
@@ -161,77 +166,61 @@
                     </div>
                     <div class="task-head-calendar-blocks d-flex align-items-center justify-content-center">
                         <!-- list of calendar boxes -->
-                        <div
-                            class="task-head-calendar-blocks-container d-flex justify-content-center bg-light px-5 h-100 align-items-center gap-5 text-dark">
-                            <div
-                                class="task-calendar-block d-flex justify-content-between d-flex flex-column align-items-center">
-                                <span class="task-calendar-block-day text-uppercase fw-bold">
-                                    Mon
-                                </span>
-                                <span class="task-calendar-block-date text-uppercase">
-                                    7
-                                </span>
+                        <div class="task-head-calendar-blocks-container bg-light py-2 px-2 px-md-4">
+                            <div class="task-head-calendar-blocks-container bg-light py-2 px-2 px-md-4 rounded">
+                                <div
+                                    class="row row-cols-10 row-cols-sm-10 row-cols-md-12 g-2 text-center align-items-stretch">
+                                    <div class="col">
+                                        <div class="task-calendar-block h-100 py-2  rounded">
+                                            <div class="task-calendar-block-day text-uppercase fw-bold small">Mon</div>
+                                            <div class="small-calendar-date-text">7</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col">
+                                        <div class="task-calendar-block h-100 py-2 rounded">
+                                            <div class="task-calendar-block-day text-uppercase fw-bold small">Tue</div>
+                                            <div class="small-calendar-date-text">8</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col">
+                                        <div class="task-calendar-block h-100 py-2 rounded">
+                                            <div class="task-calendar-block-day text-uppercase fw-bold small">Wed</div>
+                                            <div class="small-calendar-date-text">9</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col">
+                                        <div class="task-calendar-block h-100 py-2 rounded">
+                                            <div class="task-calendar-block-day text-uppercase fw-bold small">Thu</div>
+                                            <div class="small-calendar-date-text">10</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col">
+                                        <div class="task-calendar-block h-100 py-2 rounded">
+                                            <div class="task-calendar-block-day text-uppercase fw-bold small">Fri</div>
+                                            <div class="small-calendar-date-text">11</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col">
+                                        <div class="task-calendar-block h-100 py-2 rounded">
+                                            <div class="task-calendar-block-day text-uppercase fw-bold small">Sat</div>
+                                            <div class="small-calendar-date-text">12</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col">
+                                        <div class="task-calendar-block h-100 py-2 rounded">
+                                            <div class="task-calendar-block-day text-uppercase fw-bold small">Sun</div>
+                                            <div class="small-calendar-date-text">13</div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
 
-                            <div
-                                class="task-calendar-block d-flex justify-content-between d-flex flex-column align-items-center">
-                                <span class="task-calendar-block-day  text-uppercase fw-bold">
-                                    Tue
-                                </span>
-                                <span class="task-calendar-block-date text-uppercase">
-                                    8
-                                </span>
-                            </div>
-
-                            <div
-                                class="task-calendar-block d-flex justify-content-between d-flex flex-column align-items-center">
-                                <span class="task-calendar-block-day text-uppercase fw-bold">
-                                    Wed
-                                </span>
-                                <span class="task-calendar-block-date text-uppercase">
-                                    9
-                                </span>
-                            </div>
-
-                            <div
-                                class="task-calendar-block d-flex justify-content-between d-flex flex-column align-items-center">
-                                <span class="task-calendar-block-day text-uppercase fw-bold">
-                                    Thu
-                                </span>
-                                <span class="task-calendar-block-date text-uppercase">
-                                    10
-                                </span>
-                            </div>
-
-                            <div
-                                class="task-calendar-block d-flex justify-content-between d-flex flex-column align-items-center">
-                                <span class="task-calendar-block-day text-uppercase fw-bold">
-                                    Fri
-                                </span>
-                                <span class="task-calendar-block-date text-uppercase">
-                                    11
-                                </span>
-                            </div>
-
-                            <div
-                                class="task-calendar-block d-flex justify-content-between d-flex flex-column align-items-center">
-                                <span class="task-calendar-block-day text-uppercase fw-bold">
-                                    Sat
-                                </span>
-                                <span class="task-calendar-block-date text-uppercase">
-                                    12
-                                </span>
-                            </div>
-
-                            <div
-                                class="task-calendar-block d-flex justify-content-between d-flex flex-column align-items-center">
-                                <span class="task-calendar-block-day text-uppercase fw-bold">
-                                    Sun
-                                </span>
-                                <span class="task-calendar-block-date text-uppercase">
-                                    13
-                                </span>
-                            </div>
                         </div>
 
                     </div>
@@ -240,10 +229,10 @@
 
         </div>
 
-        <div class="task-each-progress-container my-4">
+        <div class="task-each-progress-container my-4 d-block d-md-fle d-lg-flex justify-content-between ">
 
             <!-- pending task-->
-            <div class="task-tab-containetr d-flex flex-column gap-3">
+            <div class="task-tab-containetr d-flex flex-column gap-2">
                 <div class="task-tab-head-and-lists-container d-flex flex-column gap-2">
                     <div class="pending-task-heading">
                         <div class="pending-task-heading-content">
@@ -260,178 +249,9 @@
                             <div class="tab-pane fade show active" id="pending-task-box-content" role="tabpanel"
                                 aria-labelledby="pending-task-box-content">
                                 <div class="work-tab-list-of-task-container ">
-                                    <ul class="work-tab-list-of-task-items list-unstyled d-flex flex-column ">
-                                        <li class="work-tab-task-item">
-                                            <div class="work-tab-task-item-content row ">
-                                                <div
-                                                    class="work-task-item-left-content col-md-4 d-flex justify-content-evenly align-items-center">
-                                                    <div class="work-task-item-icon-container">
-                                                        <!-- checkbox icon -->
-                                                        <!-- <i class="fas fa-check-circle"></i>
-                                                         -->
-                                                        <div class="work-task-item-icon-content">
-                                                            <div class="container work-task-item-icon-custom-content">
-                                                                <input id="task-1" type="checkbox"
-                                                                    class="work-task-item-checkbox" />
-                                                                <label for="task-1" class="custome-check-box"></label>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="work-task-item-time-container">
-                                                        <span class="work-task-item-time fs-4">10:00</span>
-                                                    </div>
-                                                </div>
-                                                <div
-                                                    class="work-task-item-right-content col-md-8 d-flex  justify-content-between align-items-center px-3 py-1">
-                                                    <div
-                                                        class="work-task-item-category-title-container d-flex flex-column align-items-start">
-                                                        <div class="work-task-item-category-container">
-                                                            <span
-                                                                class="work-task-item-category fw-lighter fs-6">Category</span>
-                                                        </div>
-                                                        <div class="work-task-item-title-container">
-                                                            <span class="work-task-item-title fs-4">Task title</span>
-                                                        </div>
-                                                    </div>
-
-                                                    <!-- edit and delete icon by default display none -->
-                                                    <div
-                                                        class="work-task-item-edit-and-delete-container d-flex gap-4 justify-content-end pe-2">
-                                                        <div class="work-task-item-edit-container ">
-                                                            <!-- anchor tag with id editIcon id with value delete icon -->
-                                                            <a href="#editIcon" id="editIcon"
-                                                                class="work-task-item-edit-icon fs-4 text-dark"
-                                                                data-toggle="modal" data-target="#editTaskModal">
-                                                                <i class="fa-light fa-pen-to-square"></i>
-                                                            </a>
-                                                        </div>
-                                                        <div class="work-task-item-delete-container">
-                                                            <!-- anchor tag with id deleteIcon id with value delete icon -->
-                                                            <a href="#deleteIcon" id="deleteIcon"
-                                                                class="work-task-item-delete-icon fs-4 text-dark"
-                                                                data-toggle="modal" data-target="#deleteTaskModal">
-                                                                <i class="fa-light fa-trash-can"></i>
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-
-                                        <li class="work-tab-task-item">
-                                            <div class="work-tab-task-item-content row ">
-                                                <div
-                                                    class="work-task-item-left-content col-md-4 d-flex justify-content-evenly align-items-center">
-                                                    <div class="work-task-item-icon-container">
-                                                        <!-- checkbox icon -->
-                                                        <!-- <i class="fas fa-check-circle"></i>
-                                                         -->
-                                                        <div class="work-task-item-icon-content">
-                                                            <div class="container work-task-item-icon-custom-content">
-                                                                <input id="task-1" type="checkbox"
-                                                                    class="work-task-item-checkbox" />
-                                                                <label for="task-1" class="custome-check-box"></label>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="work-task-item-time-container">
-                                                        <span class="work-task-item-time fs-4">10:00</span>
-                                                    </div>
-                                                </div>
-                                                <div
-                                                    class="work-task-item-right-content col-md-8 d-flex  justify-content-between align-items-center px-3 py-1">
-                                                    <div
-                                                        class="work-task-item-category-title-container d-flex flex-column align-items-start">
-                                                        <div class="work-task-item-category-container">
-                                                            <span
-                                                                class="work-task-item-category fw-lighter fs-6">Category</span>
-                                                        </div>
-                                                        <div class="work-task-item-title-container">
-                                                            <span class="work-task-item-title fs-4">Task title</span>
-                                                        </div>
-                                                    </div>
-
-                                                    <!-- edit and delete icon by default display none -->
-                                                    <div
-                                                        class="work-task-item-edit-and-delete-container d-flex gap-4 justify-content-end pe-2">
-                                                        <div class="work-task-item-edit-container ">
-                                                            <!-- anchor tag with id editIcon id with value delete icon -->
-                                                            <a href="#editIcon" id="editIcon"
-                                                                class="work-task-item-edit-icon fs-4 text-dark"
-                                                                data-toggle="modal" data-target="#editTaskModal">
-                                                                <i class="fa-light fa-pen-to-square"></i>
-                                                            </a>
-                                                        </div>
-                                                        <div class="work-task-item-delete-container">
-                                                            <!-- anchor tag with id deleteIcon id with value delete icon -->
-                                                            <a href="#deleteIcon" id="deleteIcon"
-                                                                class="work-task-item-delete-icon fs-4 text-dark"
-                                                                data-toggle="modal" data-target="#deleteTaskModal">
-                                                                <i class="fa-light fa-trash-can"></i>
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-
-                                        <li class="work-tab-task-item">
-                                            <div class="work-tab-task-item-content row ">
-                                                <div
-                                                    class="work-task-item-left-content col-md-4 d-flex justify-content-evenly align-items-center">
-                                                    <div class="work-task-item-icon-container">
-                                                        <!-- checkbox icon -->
-                                                        <!-- <i class="fas fa-check-circle"></i>
-                                                         -->
-                                                        <div class="work-task-item-icon-content">
-                                                            <div class="container work-task-item-icon-custom-content">
-                                                                <input id="task-1" type="checkbox"
-                                                                    class="work-task-item-checkbox" />
-                                                                <label for="task-1" class="custome-check-box"></label>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="work-task-item-time-container">
-                                                        <span class="work-task-item-time fs-4">10:00</span>
-                                                    </div>
-                                                </div>
-                                                <div
-                                                    class="work-task-item-right-content col-md-8 d-flex  justify-content-between align-items-center px-3 py-1">
-                                                    <div
-                                                        class="work-task-item-category-title-container d-flex flex-column align-items-start">
-                                                        <div class="work-task-item-category-container">
-                                                            <span
-                                                                class="work-task-item-category fw-lighter fs-6">Category</span>
-                                                        </div>
-                                                        <div class="work-task-item-title-container">
-                                                            <span class="work-task-item-title fs-4">Task title</span>
-                                                        </div>
-                                                    </div>
-
-                                                    <!-- edit and delete icon by default display none -->
-                                                    <div
-                                                        class="work-task-item-edit-and-delete-container d-flex gap-4 justify-content-end pe-2">
-                                                        <div class="work-task-item-edit-container ">
-                                                            <!-- anchor tag with id editIcon id with value delete icon -->
-                                                            <a href="#editIcon" id="editIcon"
-                                                                class="work-task-item-edit-icon fs-4 text-dark"
-                                                                data-toggle="modal" data-target="#editTaskModal">
-                                                                <i class="fa-light fa-pen-to-square"></i>
-                                                            </a>
-                                                        </div>
-                                                        <div class="work-task-item-delete-container">
-                                                            <!-- anchor tag with id deleteIcon id with value delete icon -->
-                                                            <a href="#deleteIcon" id="deleteIcon"
-                                                                class="work-task-item-delete-icon fs-4 text-dark"
-                                                                data-toggle="modal" data-target="#deleteTaskModal">
-                                                                <i class="fa-light fa-trash-can"></i>
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ul>
+                                    <!-- Pending -->
+                                    <ul id="pendingList"
+                                        class="work-tab-list-of-task-items list-unstyled d-flex flex-column"></ul>
                                 </div>
                             </div>
                         </div>
@@ -440,11 +260,15 @@
                 </div>
 
                 <div class="task-tab-add-btn-container d-flex justify-content-center align-items-center">
-                    <a href="#" class="task-tab-add-btn text-dark px-3 py-2 bg-dark">
-                        <span class="task-tab-add-btn-text">
-                            <i class="fa-regular fa-plus"></i>
-                            Add task
-                        </span>
+                    <a class="btn btn-primary task-tab-add-btn btn-sm d-flex align-items-center gap-2 py-2 px-3 add-task-btn-on-menu"
+                        href="#body" data-default-status="wait">
+                        <!-- add icon and text Add task -->
+                        <div class="task-add-btn-icon-container">
+                            <i class="fas fa-plus"></i>
+                        </div>
+                        <div class="task-add-btn-text-container">
+                            <span class="add-task-text fs-6">Add Task</span>
+                        </div>
                     </a>
                 </div>
             </div>
@@ -467,178 +291,9 @@
                             <div class="tab-pane fade show active" id="progress-task-box-content" role="tabpanel"
                                 aria-labelledby="progress-task-box-content">
                                 <div class="work-tab-list-of-task-container ">
-                                    <ul class="work-tab-list-of-task-items list-unstyled d-flex flex-column ">
-                                        <li class="work-tab-task-item">
-                                            <div class="work-tab-task-item-content row ">
-                                                <div
-                                                    class="work-task-item-left-content col-md-4 d-flex justify-content-evenly align-items-center">
-                                                    <div class="work-task-item-icon-container">
-                                                        <!-- checkbox icon -->
-                                                        <!-- <i class="fas fa-check-circle"></i>
-                                                         -->
-                                                        <div class="work-task-item-icon-content">
-                                                            <div class="container work-task-item-icon-custom-content">
-                                                                <input id="task-1" type="checkbox"
-                                                                    class="work-task-item-checkbox" />
-                                                                <label for="task-1" class="custome-check-box"></label>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="work-task-item-time-container">
-                                                        <span class="work-task-item-time fs-4">10:00</span>
-                                                    </div>
-                                                </div>
-                                                <div
-                                                    class="work-task-item-right-content col-md-8 d-flex  justify-content-between align-items-center px-3 py-1">
-                                                    <div
-                                                        class="work-task-item-category-title-container d-flex flex-column align-items-start">
-                                                        <div class="work-task-item-category-container">
-                                                            <span
-                                                                class="work-task-item-category fw-lighter fs-6">Category</span>
-                                                        </div>
-                                                        <div class="work-task-item-title-container">
-                                                            <span class="work-task-item-title fs-4">Task title</span>
-                                                        </div>
-                                                    </div>
-
-                                                    <!-- edit and delete icon by default display none -->
-                                                    <div
-                                                        class="work-task-item-edit-and-delete-container d-flex gap-4 justify-content-end pe-2">
-                                                        <div class="work-task-item-edit-container ">
-                                                            <!-- anchor tag with id editIcon id with value delete icon -->
-                                                            <a href="#editIcon" id="editIcon"
-                                                                class="work-task-item-edit-icon fs-4 text-dark"
-                                                                data-toggle="modal" data-target="#editTaskModal">
-                                                                <i class="fa-light fa-pen-to-square"></i>
-                                                            </a>
-                                                        </div>
-                                                        <div class="work-task-item-delete-container">
-                                                            <!-- anchor tag with id deleteIcon id with value delete icon -->
-                                                            <a href="#deleteIcon" id="deleteIcon"
-                                                                class="work-task-item-delete-icon fs-4 text-dark"
-                                                                data-toggle="modal" data-target="#deleteTaskModal">
-                                                                <i class="fa-light fa-trash-can"></i>
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-
-                                        <li class="work-tab-task-item">
-                                            <div class="work-tab-task-item-content row ">
-                                                <div
-                                                    class="work-task-item-left-content col-md-4 d-flex justify-content-evenly align-items-center">
-                                                    <div class="work-task-item-icon-container">
-                                                        <!-- checkbox icon -->
-                                                        <!-- <i class="fas fa-check-circle"></i>
-                                                         -->
-                                                        <div class="work-task-item-icon-content">
-                                                            <div class="container work-task-item-icon-custom-content">
-                                                                <input id="task-1" type="checkbox"
-                                                                    class="work-task-item-checkbox" />
-                                                                <label for="task-1" class="custome-check-box"></label>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="work-task-item-time-container">
-                                                        <span class="work-task-item-time fs-4">10:00</span>
-                                                    </div>
-                                                </div>
-                                                <div
-                                                    class="work-task-item-right-content col-md-8 d-flex  justify-content-between align-items-center px-3 py-1">
-                                                    <div
-                                                        class="work-task-item-category-title-container d-flex flex-column align-items-start">
-                                                        <div class="work-task-item-category-container">
-                                                            <span
-                                                                class="work-task-item-category fw-lighter fs-6">Category</span>
-                                                        </div>
-                                                        <div class="work-task-item-title-container">
-                                                            <span class="work-task-item-title fs-4">Task title</span>
-                                                        </div>
-                                                    </div>
-
-                                                    <!-- edit and delete icon by default display none -->
-                                                    <div
-                                                        class="work-task-item-edit-and-delete-container d-flex gap-4 justify-content-end pe-2">
-                                                        <div class="work-task-item-edit-container ">
-                                                            <!-- anchor tag with id editIcon id with value delete icon -->
-                                                            <a href="#editIcon" id="editIcon"
-                                                                class="work-task-item-edit-icon fs-4 text-dark"
-                                                                data-toggle="modal" data-target="#editTaskModal">
-                                                                <i class="fa-light fa-pen-to-square"></i>
-                                                            </a>
-                                                        </div>
-                                                        <div class="work-task-item-delete-container">
-                                                            <!-- anchor tag with id deleteIcon id with value delete icon -->
-                                                            <a href="#deleteIcon" id="deleteIcon"
-                                                                class="work-task-item-delete-icon fs-4 text-dark"
-                                                                data-toggle="modal" data-target="#deleteTaskModal">
-                                                                <i class="fa-light fa-trash-can"></i>
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-
-                                        <li class="work-tab-task-item">
-                                            <div class="work-tab-task-item-content row ">
-                                                <div
-                                                    class="work-task-item-left-content col-md-4 d-flex justify-content-evenly align-items-center">
-                                                    <div class="work-task-item-icon-container">
-                                                        <!-- checkbox icon -->
-                                                        <!-- <i class="fas fa-check-circle"></i>
-                                                         -->
-                                                        <div class="work-task-item-icon-content">
-                                                            <div class="container work-task-item-icon-custom-content">
-                                                                <input id="task-1" type="checkbox"
-                                                                    class="work-task-item-checkbox" />
-                                                                <label for="task-1" class="custome-check-box"></label>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="work-task-item-time-container">
-                                                        <span class="work-task-item-time fs-4">10:00</span>
-                                                    </div>
-                                                </div>
-                                                <div
-                                                    class="work-task-item-right-content col-md-8 d-flex  justify-content-between align-items-center px-3 py-1">
-                                                    <div
-                                                        class="work-task-item-category-title-container d-flex flex-column align-items-start">
-                                                        <div class="work-task-item-category-container">
-                                                            <span
-                                                                class="work-task-item-category fw-lighter fs-6">Category</span>
-                                                        </div>
-                                                        <div class="work-task-item-title-container">
-                                                            <span class="work-task-item-title fs-4">Task title</span>
-                                                        </div>
-                                                    </div>
-
-                                                    <!-- edit and delete icon by default display none -->
-                                                    <div
-                                                        class="work-task-item-edit-and-delete-container d-flex gap-4 justify-content-end pe-2">
-                                                        <div class="work-task-item-edit-container ">
-                                                            <!-- anchor tag with id editIcon id with value delete icon -->
-                                                            <a href="#editIcon" id="editIcon"
-                                                                class="work-task-item-edit-icon fs-4 text-dark"
-                                                                data-toggle="modal" data-target="#editTaskModal">
-                                                                <i class="fa-light fa-pen-to-square"></i>
-                                                            </a>
-                                                        </div>
-                                                        <div class="work-task-item-delete-container">
-                                                            <!-- anchor tag with id deleteIcon id with value delete icon -->
-                                                            <a href="#deleteIcon" id="deleteIcon"
-                                                                class="work-task-item-delete-icon fs-4 text-dark"
-                                                                data-toggle="modal" data-target="#deleteTaskModal">
-                                                                <i class="fa-light fa-trash-can"></i>
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ul>
+                                    <!-- In-progress -->
+                                    <ul id="progressList"
+                                        class="work-tab-list-of-task-items list-unstyled d-flex flex-column"></ul>
                                 </div>
                             </div>
                         </div>
@@ -647,11 +302,15 @@
                 </div>
 
                 <div class="task-tab-add-btn-container d-flex justify-content-center align-items-center">
-                    <a href="#" class="task-tab-add-btn text-dark px-3 py-2 bg-dark">
-                        <span class="task-tab-add-btn-text">
-                            <i class="fa-regular fa-plus"></i>
-                            Add task
-                        </span>
+                    <a class="btn btn-primary task-tab-add-btn btn-sm d-flex align-items-center gap-2 py-2 px-3 add-task-btn-on-menu"
+                        href="#body" data-default-status="progress">
+                        <!-- add icon and text Add task -->
+                        <div class="task-add-btn-icon-container">
+                            <i class="fas fa-plus"></i>
+                        </div>
+                        <div class="task-add-btn-text-container">
+                            <span class="add-task-text fs-6">Add Task</span>
+                        </div>
                     </a>
                 </div>
             </div>
@@ -675,188 +334,18 @@
                             <div class="tab-pane fade show active" id="completed-task-box-content" role="tabpanel"
                                 aria-labelledby="completed-task-box-content">
                                 <div class="work-tab-list-of-task-container ">
-                                    <ul class="work-tab-list-of-task-items list-unstyled d-flex flex-column ">
-                                        <li class="work-tab-task-item">
-                                            <div class="work-tab-task-item-content row ">
-                                                <div
-                                                    class="work-task-item-left-content col-md-4 d-flex justify-content-evenly align-items-center">
-                                                    <div class="work-task-item-icon-container">
-                                                        <!-- checkbox icon -->
-                                                        <!-- <i class="fas fa-check-circle"></i>
-                                                         -->
-                                                        <div class="work-task-item-icon-content">
-                                                            <div class="container work-task-item-icon-custom-content">
-                                                                <input id="task-1" type="checkbox"
-                                                                    class="work-task-item-checkbox" />
-                                                                <label for="task-1" class="custome-check-box"></label>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="work-task-item-time-container">
-                                                        <span class="work-task-item-time fs-4">10:00</span>
-                                                    </div>
-                                                </div>
-                                                <div
-                                                    class="work-task-item-right-content col-md-8 d-flex  justify-content-between align-items-center px-3 py-1">
-                                                    <div
-                                                        class="work-task-item-category-title-container d-flex flex-column align-items-start">
-                                                        <div class="work-task-item-category-container">
-                                                            <span
-                                                                class="work-task-item-category fw-lighter fs-6">Category</span>
-                                                        </div>
-                                                        <div class="work-task-item-title-container">
-                                                            <span class="work-task-item-title fs-4">Task title</span>
-                                                        </div>
-                                                    </div>
-
-                                                    <!-- edit and delete icon by default display none -->
-                                                    <div
-                                                        class="work-task-item-edit-and-delete-container d-flex gap-4 justify-content-end pe-2">
-                                                        <div class="work-task-item-edit-container ">
-                                                            <!-- anchor tag with id editIcon id with value delete icon -->
-                                                            <a href="#editIcon" id="editIcon"
-                                                                class="work-task-item-edit-icon fs-4 text-dark"
-                                                                data-toggle="modal" data-target="#editTaskModal">
-                                                                <i class="fa-light fa-pen-to-square"></i>
-                                                            </a>
-                                                        </div>
-                                                        <div class="work-task-item-delete-container">
-                                                            <!-- anchor tag with id deleteIcon id with value delete icon -->
-                                                            <a href="#deleteIcon" id="deleteIcon"
-                                                                class="work-task-item-delete-icon fs-4 text-dark"
-                                                                data-toggle="modal" data-target="#deleteTaskModal">
-                                                                <i class="fa-light fa-trash-can"></i>
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-
-                                        <li class="work-tab-task-item">
-                                            <div class="work-tab-task-item-content row ">
-                                                <div
-                                                    class="work-task-item-left-content col-md-4 d-flex justify-content-evenly align-items-center">
-                                                    <div class="work-task-item-icon-container">
-                                                        <!-- checkbox icon -->
-                                                        <!-- <i class="fas fa-check-circle"></i>
-                                                         -->
-                                                        <div class="work-task-item-icon-content">
-                                                            <div class="container work-task-item-icon-custom-content">
-                                                                <input id="task-1" type="checkbox"
-                                                                    class="work-task-item-checkbox" />
-                                                                <label for="task-1" class="custome-check-box"></label>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="work-task-item-time-container">
-                                                        <span class="work-task-item-time fs-4">10:00</span>
-                                                    </div>
-                                                </div>
-                                                <div
-                                                    class="work-task-item-right-content col-md-8 d-flex  justify-content-between align-items-center px-3 py-1">
-                                                    <div
-                                                        class="work-task-item-category-title-container d-flex flex-column align-items-start">
-                                                        <div class="work-task-item-category-container">
-                                                            <span
-                                                                class="work-task-item-category fw-lighter fs-6">Category</span>
-                                                        </div>
-                                                        <div class="work-task-item-title-container">
-                                                            <span class="work-task-item-title fs-4">Task title</span>
-                                                        </div>
-                                                    </div>
-
-                                                    <!-- edit and delete icon by default display none -->
-                                                    <div
-                                                        class="work-task-item-edit-and-delete-container d-flex gap-4 justify-content-end pe-2">
-                                                        <div class="work-task-item-edit-container ">
-                                                            <!-- anchor tag with id editIcon id with value delete icon -->
-                                                            <a href="#editIcon" id="editIcon"
-                                                                class="work-task-item-edit-icon fs-4 text-dark"
-                                                                data-toggle="modal" data-target="#editTaskModal">
-                                                                <i class="fa-light fa-pen-to-square"></i>
-                                                            </a>
-                                                        </div>
-                                                        <div class="work-task-item-delete-container">
-                                                            <!-- anchor tag with id deleteIcon id with value delete icon -->
-                                                            <a href="#deleteIcon" id="deleteIcon"
-                                                                class="work-task-item-delete-icon fs-4 text-dark"
-                                                                data-toggle="modal" data-target="#deleteTaskModal">
-                                                                <i class="fa-light fa-trash-can"></i>
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-
-                                        <li class="work-tab-task-item">
-                                            <div class="work-tab-task-item-content row ">
-                                                <div
-                                                    class="work-task-item-left-content col-md-4 d-flex justify-content-evenly align-items-center">
-                                                    <div class="work-task-item-icon-container">
-                                                        <!-- checkbox icon -->
-                                                        <!-- <i class="fas fa-check-circle"></i>
-                                                         -->
-                                                        <div class="work-task-item-icon-content">
-                                                            <div class="container work-task-item-icon-custom-content">
-                                                                <input id="task-1" type="checkbox"
-                                                                    class="work-task-item-checkbox" />
-                                                                <label for="task-1" class="custome-check-box"></label>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="work-task-item-time-container">
-                                                        <span class="work-task-item-time fs-4">10:00</span>
-                                                    </div>
-                                                </div>
-                                                <div
-                                                    class="work-task-item-right-content col-md-8 d-flex  justify-content-between align-items-center px-3 py-1">
-                                                    <div
-                                                        class="work-task-item-category-title-container d-flex flex-column align-items-start">
-                                                        <div class="work-task-item-category-container">
-                                                            <span
-                                                                class="work-task-item-category fw-lighter fs-6">Category</span>
-                                                        </div>
-                                                        <div class="work-task-item-title-container">
-                                                            <span class="work-task-item-title fs-4">Task title</span>
-                                                        </div>
-                                                    </div>
-
-                                                    <!-- edit and delete icon by default display none -->
-                                                    <div
-                                                        class="work-task-item-edit-and-delete-container d-flex gap-4 justify-content-end pe-2">
-                                                        <div class="work-task-item-edit-container ">
-                                                            <!-- anchor tag with id editIcon id with value delete icon -->
-                                                            <a href="#editIcon" id="editIcon"
-                                                                class="work-task-item-edit-icon fs-4 text-dark"
-                                                                data-toggle="modal" data-target="#editTaskModal">
-                                                                <i class="fa-light fa-pen-to-square"></i>
-                                                            </a>
-                                                        </div>
-                                                        <div class="work-task-item-delete-container">
-                                                            <!-- anchor tag with id deleteIcon id with value delete icon -->
-                                                            <a href="#deleteIcon" id="deleteIcon"
-                                                                class="work-task-item-delete-icon fs-4 text-dark"
-                                                                data-toggle="modal" data-target="#deleteTaskModal">
-                                                                <i class="fa-light fa-trash-can"></i>
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ul>
+                                    <!-- Completed -->
+                                    <ul id="completedList"
+                                        class="work-tab-list-of-task-items list-unstyled d-flex flex-column"></ul>
                                 </div>
                             </div>
                         </div>
                         <!-- Tabs content -->
                     </div>
+                    <div>
+                    </div>
+
                 </div>
-
-            </div>
-
-        </div>
 
 
 
@@ -907,7 +396,317 @@
         </div>
     </div>
 
-    <script src="assets/js/custom.js"></script>
+    <!-- add task pop box  -->
+    <div id="addTaskBox" class="add-task-pop-box-container hidden h-100">
+        <div class="add-task-pop-box d-flex flex-column justify-content-evenly">
+            <div class="add-task-pop-box-head fs-2 fw-bolder">
+                <span class="add-task-pop-box-head-text text-dark">
+                    Create Task
+                </span>
+            </div>
+            <div class="add-task-pop-box-body d-flex flex-column mt-0 mb-3">
+                <div class="add-task-pop-box-body-content pb-2">
+                    <div class="add-task-pop-box-body-content-head">
+                        <label class="add-task-pop-box-body-content-head-text fs-5 text-dark fw-regular required"
+                            for="task-name-input">
+                            Title
+                        </label>
+                    </div>
+                    <div class="add-task-pop-box-body-content-body w-100">
+                        <input type="text" class="add-task-pop-box-body-content-body-input w-100"
+                            placeholder="Write title here.." name="taskName" id="task-name-input">
+                    </div>
+                    <span class="errorMsg"></span>
+                </div>
+                <div class="add-task-pop-box-body-content pb-2">
+                    <div class="add-task-pop-box-body-content-head">
+                        <label class="add-task-pop-box-body-content-head-text required" for="task-desc-input">
+                            Description
+                        </label>
+                    </div>
+                    <div class="add-task-pop-box-body-content-body ">
+                        <textarea class="add-task-pop-box-body-content-body-input" style="min-width:100%; resize: none;"
+                            rows="3" placeholder="Write description.." id="task-desc-input"></textarea>
+                    </div>
+                    <span class="errorMsg"></span>
+                </div>
+                <div class="add-task-pop-box-body-content d-flex justify-content-between row align-items-center pb-2">
+                    <div class="add-task-pop-box-body-start-date-and-time-container col-md-6">
+                        <div class="add-task-pop-box-body-content-head">
+                            <label class="add-task-pop-box-body-content-head-text required" for="task-date-input">
+                                Date
+                            </label>
+                        </div>
+                        <div class="add-task-pop-box-body-content-body">
+                            <input type="date" class="add-task-pop-box-body-content-body-input" id="task-date-input">
+                            <span class="errorMsg"></span>
+
+                        </div>
+
+                    </div>
+                    <div class="add-task-pop-box-body-start-date-and-time-container col-md-3">
+                        <div class="add-task-pop-box-body-content">
+                            <div class="add-task-pop-box-body-content-head">
+                                <label class="add-task-pop-box-body-content-head-text required" for="task-start-input">
+                                    Start
+                                </label>
+                            </div>
+                            <div class="add-task-pop-box-body-content-body">
+                                <input type="time" class="add-task-pop-box-body-content-body-input"
+                                    id="task-start-input">
+                            </div>
+                            <span class="errorMsg"></span>
+
+                        </div>
+
+                    </div>
+                    <div class="add-task-pop-box-body-start-date-and-time-container col-md-3">
+                        <div class="add-task-pop-box-body-content">
+                            <div class="add-task-pop-box-body-content-head">
+                                <label class="add-task-pop-box-body-content-head-text required" for="task-end-input">
+                                    End
+                                </label>
+                            </div>
+                            <div class="add-task-pop-box-body-content-body">
+                                <input type="time" class="add-task-pop-box-body-content-body-input" id="task-end-input">
+                            </div>
+                            <span class="errorMsg"></span>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="add-task-pop-box-body-content d-flex justify-content-between align-items-center row pb-2 ">
+                    <div class="add-task-pop-box-body-start-date-and-time-container col-md-6">
+                        <div class="add-task-pop-box-body-content-head">
+                            <label class="add-task-pop-box-body-content-head-text" for="task-category-input">
+                                Category
+                            </label>
+                        </div>
+                        <div class="add-task-pop-box-body-content-body">
+                            <!-- dropdown of categories with value shopping, study, and other -->
+                            <select class="add-task-pop-box-body-content-body-input" id="task-category-input">
+                                <option value="shopping">Shopping</option>
+                                <option value="study">Study</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="add-task-pop-box-body-start-date-and-time-container col-md-3">
+                        <div class="add-task-pop-box-body-content">
+                            <div class="add-task-pop-box-body-content-head">
+                                <label class="add-task-pop-box-body-content-head-text" for="task-type-input">
+                                    Type
+                                </label>
+                            </div>
+                            <div class="add-task-pop-box-body-content-body">
+                                <!-- drop down type with value work, personal  -->
+                                <select class="add-task-pop-box-body-content-body-input" id="task-type-input">
+                                    <option value="work">Work</option>
+                                    <option value="personal">Personal</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="add-task-pop-box-body-start-date-and-time-container col-md-3">
+                        <div class="add-task-pop-box-body-content">
+                            <div class="add-task-pop-box-body-content-head">
+                                <label class="add-task-pop-box-body-content-head-text" for="task-status-input">
+                                    Status
+                                </label>
+                            </div>
+                            <div class="add-task-pop-box-body-content-body">
+                                <!-- drop down status wait, progress, complete -->
+                                <select class="add-task-pop-box-body-content-body-input" id="task-status-input">
+                                    <option value="wait">Wait</option>
+                                    <option value="progress">Progress</option>
+                                    <option value="complete">Complete</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="form-group d-flex justify-content-center gap-4 ">
+                <div class="individual-btn-container">
+                    <button type="reset" class="btn btn-outline-primary text-uppercase btn-block"
+                        id="cancelTaskBtn">Cancel</button>
+                </div>
+                <div class="individual-btn-container">
+                    <button type=" submit" class="btn btn-primary btn-block text-uppercase" id="createTaskBtn"
+                        onclick="">Create</button>
+
+                </div>
+            </div>
+
+            <!-- cancel cross icon  -->
+            <div class="add-task-pop-box-cancel-icon-btn-container ">
+                <a href="#body" id="cancelTaskCrossBtn" class="d-flex justify-content-center align-items-center h-100">
+                    <i class="fa-regular fs-3 fa-fw fa-times"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- edit task pop box -->
+    <div id="editTaskBox" class="add-task-pop-box-container hidden">
+        <div class="add-task-pop-box d-flex flex-column justify-content-evenly">
+            <div class="add-task-pop-box-head fs-2 fw-bolder">
+                <span class="add-task-pop-box-head-text text-dark">
+                    Edit Task
+                </span>
+            </div>
+            <div class="add-task-pop-box-body d-flex flex-column mt-0 mb-3">
+                <div class="add-task-pop-box-body-content pb-2">
+                    <div class="add-task-pop-box-body-content-head">
+                        <label class="add-task-pop-box-body-content-head-text fs-5 text-dark fw-regular required"
+                            for="edit-task-name-input">
+                            Title
+                        </label>
+                    </div>
+                    <div class="add-task-pop-box-body-content-body w-100">
+                        <input type="text" class="add-task-pop-box-body-content-body-input w-100"
+                            placeholder="Write title here.." name="taskName" id="edit-task-name-input">
+                    </div>
+                    <span class="errorMsg"></span>
+
+                </div>
+                <div class="add-task-pop-box-body-content pb-2">
+                    <div class="add-task-pop-box-body-content-head">
+                        <label class="add-task-pop-box-body-content-head-text required" for="edit-task-desc-input">
+                            Description
+                        </label>
+                    </div>
+                    <div class="add-task-pop-box-body-content-body ">
+                        <textarea class="add-task-pop-box-body-content-body-input" style="min-width:100%; resize: none;"
+                            rows="3" placeholder="Write description.." id="edit-task-desc-input"></textarea>
+                    </div>
+                    <span class="errorMsg"></span>
+
+                </div>
+                <div class="add-task-pop-box-body-content d-flex justify-content-between row align-items-center pb-2">
+                    <div class="add-task-pop-box-body-start-date-and-time-container col-md-6">
+                        <div class="add-task-pop-box-body-content-head">
+                            <label class="add-task-pop-box-body-content-head-text required" for="edit-task-date-input">
+                                Date
+                            </label>
+                        </div>
+                        <div class="add-task-pop-box-body-content-body">
+                            <input type="date" class="add-task-pop-box-body-content-body-input"
+                                id="edit-task-date-input">
+                        </div>
+                        <span class="errorMsg"></span>
+
+                    </div>
+                    <div class="add-task-pop-box-body-start-date-and-time-container col-md-3">
+                        <div class="add-task-pop-box-body-content">
+                            <div class="add-task-pop-box-body-content-head">
+                                <label class="add-task-pop-box-body-content-head-text required"
+                                    for="edit-task-start-input">
+                                    Start
+                                </label>
+                            </div>
+                            <div class="add-task-pop-box-body-content-body">
+                                <input type="time" class="add-task-pop-box-body-content-body-input"
+                                    id="edit-task-start-input">
+                            </div>
+                            <span class="errorMsg"></span>
+
+                        </div>
+                    </div>
+                    <div class="add-task-pop-box-body-start-date-and-time-container col-md-3">
+                        <div class="add-task-pop-box-body-content">
+                            <div class="add-task-pop-box-body-content-head">
+                                <label class="add-task-pop-box-body-content-head-text required"
+                                    for="edit-task-end-input">
+                                    End
+                                </label>
+                            </div>
+                            <div class="add-task-pop-box-body-content-body">
+                                <input type="time" class="add-task-pop-box-body-content-body-input"
+                                    id="edit-task-end-input">
+                            </div>
+                            <span class="errorMsg"></span>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="add-task-pop-box-body-content d-flex justify-content-between align-items-center row pb-2 ">
+                    <div class="add-task-pop-box-body-start-date-and-time-container col-md-6">
+                        <div class="add-task-pop-box-body-content-head">
+                            <label class="add-task-pop-box-body-content-head-text" for="edit-task-category-input">
+                                Category
+                            </label>
+                        </div>
+                        <div class="add-task-pop-box-body-content-body">
+                            <!-- dropdown of categories with value shopping, study, and other -->
+                            <select class="add-task-pop-box-body-content-body-input" id="edit-task-category-input">
+                                <option value="shopping">Shopping</option>
+                                <option value="study">Study</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="add-task-pop-box-body-start-date-and-time-container col-md-3">
+                        <div class="add-task-pop-box-body-content">
+                            <div class="add-task-pop-box-body-content-head">
+                                <label class="add-task-pop-box-body-content-head-text" for="edit-task-type-input">
+                                    Type
+                                </label>
+                            </div>
+                            <div class="add-task-pop-box-body-content-body">
+                                <!-- drop down type with value work, personal  -->
+                                <select class="add-task-pop-box-body-content-body-input" id="edit-task-type-input">
+                                    <option value="work">Work</option>
+                                    <option value="personal">Personal</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="add-task-pop-box-body-start-date-and-time-container col-md-3">
+                        <div class="add-task-pop-box-body-content">
+                            <div class="add-task-pop-box-body-content-head">
+                                <label class="add-task-pop-box-body-content-head-text" for="edit-task-status-input">
+                                    Status
+                                </label>
+                            </div>
+                            <div class="add-task-pop-box-body-content-body">
+                                <!-- drop down status wait, progress, complete -->
+                                <select class="add-task-pop-box-body-content-body-input" id="edit-task-status-input">
+                                    <option value="wait">Wait</option>
+                                    <option value="progress">Progress</option>
+                                    <option value="complete">Complete</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="form-group d-flex justify-content-center gap-4 ">
+                <div class="individual-btn-container">
+                    <button type="reset" class="btn btn-outline-primary text-uppercase btn-block"
+                        id="cancelTaskBtn">Cancel</button>
+                </div>
+                <div class="individual-btn-container">
+                    <button type=" submit" class="btn btn-primary btn-block text-uppercase" id="createTaskBtn"
+                        onclick="">Save Changes</button>
+
+                </div>
+            </div>
+
+            <!-- cancel cross icon  -->
+            <div class="add-task-pop-box-cancel-icon-btn-container ">
+                <a href="#body" id="cancelTaskCrossBtn" class="d-flex justify-content-center align-items-center h-100">
+                    <i class="fa-regular fs-3 fa-fw fa-times"></i>
+                </a>
+            </div>
+        </div>
+    </div>
 
 
 </body>

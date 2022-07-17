@@ -82,7 +82,6 @@ const sampleTaskList = [
 ];
 
 
-// Add this to your existing sampleTaskList
 const sampleNoteList = [
     {
         noteTitle: 'Project Meeting Notes',

@@ -13,7 +13,7 @@ function formatNoteMeta(iso) {
         month: "short",
         hour: "2-digit",
         minute: "2-digit"
-    }).format(new Date(iso)); // "15 Jan, 03:11"
+    }).format(new Date(iso)); 
 }
 
 

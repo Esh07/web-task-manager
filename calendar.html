@@ -39,95 +39,104 @@
 
 </head>
 
-<body id="body">
-
+<body id="body" data-page="calendar">
     <header class="page-header overflow-hidden">
         <div class="header-container">
-            <nav class="navigation-bar navbar navbar-expand-lg navbar-light p-0 ">
-                <div class="nav-container container-fluid">
-                    <!-- Top row: profile LEFT + hamburger RIGHT (same line) -->
-                    <div class="d-flex justify-content-between align-items-center mb-2 mb-lg-0 w-100">
+            <!-- Keep your header wrapper, replace just nav -->
+            <header class="page-header overflow-hidden">
+                <div class="header-container">
+                    <nav class="navigation-bar navbar navbar-expand-lg navbar-light p-0 ">
+                        <div class="nav-container container-fluid">
+                            <!-- Top row: profile LEFT + hamburger RIGHT (same line) -->
+                            <div class="d-flex justify-content-between align-items-center mb-2 mb-lg-0 w-100">
 
-                        <!-- Profile left (always visible, full width mobile) -->
-                        <div class="nav-profile d-flex align-items-center gap-3 gap-md-4 flex-lg-grow-0 order-1">
-                            <div
-                                class="profile-name-setting-container d-flex justify-content-center align-items-center gap-2 gap-md-3 flex-grow-1 flex-lg-grow-0">
+                                <!-- Profile left (always visible, full width mobile) -->
                                 <div
-                                    class="profile-icon-container rounded-circle d-flex justify-content-center align-items-center">
-                                    <div class="profile-icon-content">
-                                        <i class="fa-solid fa-user fs-2 fs-md-1"></i>
-                                    </div>
-                                </div>
-                                <div class="profile-name-container d-flex flex-column text-dark ms-2 d-lg-block">
-                                    <span class="fs-4 fs-md-3 fw-light">Eshvar Prakash</span>
+                                    class="nav-profile d-flex align-items-center gap-3 gap-md-4 flex-lg-grow-0 order-1">
                                     <div
-                                        class="profile-setting-container d-none d-lg-flex align-items-center gap-2 mt-1">
-                                        <i class="fa-light fs-6 fa-cog"></i>
-                                        <span class="profile-setting-text fs-6 fw-lighter">Account
-                                            settings</span>
+                                        class="profile-name-setting-container d-flex justify-content-center align-items-center gap-2 gap-md-3 flex-grow-1 flex-lg-grow-0">
+                                        <div
+                                            class="profile-icon-container rounded-circle d-flex justify-content-center align-items-center">
+                                            <div class="profile-icon-content">
+                                                <i class="fa-solid fa-user fs-2 fs-md-1"></i>
+                                            </div>
+                                        </div>
+                                        <div
+                                            class="profile-name-container d-flex flex-column text-dark ms-2 d-lg-block">
+                                            <span class="fs-4 fs-md-3 fw-light">Eshvar Prakash</span>
+                                            <div
+                                                class="profile-setting-container d-none d-lg-flex align-items-center gap-2 mt-1">
+                                                <i class="fa-light fs-6 fa-cog"></i>
+                                                <span class="profile-setting-text fs-6 fw-lighter">Account
+                                                    settings</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Notification icons (compact right of profile mobile) -->
+                                    <div
+                                        class="notification-icon-container d-flex gap-2 gap-md-3 flex-shrink-0 ms-auto ms-lg-0">
+                                        <i class="fa-light fs-4 fs-md-3 fa-bell" id="notification-bell-icon"></i>
+                                        <a href="#body" id="accesiblity-icon">
+                                            <i class="fa-light fs-4 fs-md-3 fa-universal-access"></i>
+                                        </a>
                                     </div>
                                 </div>
+
+                                <!-- Hamburger RIGHT (same line, shows < lg) -->
+
+                                <button class="navbar-toggler flex-shrink-0 d-lg-none ms-2 order-2 text-dark p-2"
+                                    type="button" data-bs-toggle="collapse" data-bs-target="#navLinks">
+                                    <i class="fas fa-bars fs-2" id="hamburger-icon"></i>
+                                </button>
+
+
                             </div>
 
-                            <!-- Notification icons (compact right of profile mobile) -->
-                            <div
-                                class="notification-icon-container d-flex gap-2 gap-md-3 flex-shrink-0 ms-auto ms-lg-0">
-                                <i class="fa-light fs-4 fs-md-3 fa-bell" id="notification-bell-icon"></i>
-                                <a href="#body" id="accesiblity-icon">
-                                    <i class="fa-light fs-4 fs-md-3 fa-universal-access"></i>
-                                </a>
+                            <!-- Links below (collapses, hidden until hamburger clicked) -->
+                            <div class="nav-links text-reset text-dark navbar-collapse collapse pt-2 pt-lg-0"
+                                id="navLinks">
+                                <ul
+                                    class="navbar-nav d-flex list-unstyled justify-content-center w-100 gap-2 gap-md-0 flex-column flex-lg-row mb-0">
+                                    <li class="nav-item w-100 w-lg-auto p-ld-2 p-md-3 p-lg-5 flex-fill flex-lg-grow-0">
+                                        <a href="index.html"
+                                            class="nav-link d-flex align-items-center justify-content-center gap-2 gap-md-3 h-100 text-decoration-none">
+                                            <div class="nav-link-icon-content">
+                                                <i class="fa-solid fs-3 fs-md-2 fa-grid-horizontal"></i>
+                                            </div>
+                                            <div class="nav-link-text-content fw-regular fs-5 fs-md-4">Dashboard</div>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item p-2 p-md-3 p-lg-5 flex-fill flex-lg-grow-0 nav-link-active">
+                                        <a href="task.html"
+                                            class="nav-link d-flex align-items-center justify-content-center gap-2 gap-md-3 h-100 text-decoration-none">
+                                            <div class="nav-link-icon-content">
+                                                <i class="fa-solid fs-3 fs-md-2 fa-list-check"></i>
+                                            </div>
+                                            <div class="nav-link-text-content fw-regular fs-5 fs-md-4">Task</div>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item p-2 p-md-3 p-lg-5 flex-fill flex-lg-grow-0">
+                                        <a href="calendar.html"
+                                            class="nav-link d-flex align-items-center justify-content-center gap-2 gap-md-3 h-100 text-decoration-none">
+                                            <div class="nav-link-icon-content">
+                                                <i class="fa-light fs-3 fs-md-2 fa-calendar-days"></i>
+                                            </div>
+                                            <div class="nav-link-text-content fw-light fs-5 fs-md-4">Calendar</div>
+                                        </a>
+                                    </li>
+                                </ul>
                             </div>
+
                         </div>
-
-                        <!-- Hamburger RIGHT (same line, shows < lg) -->
-
-                        <button class="navbar-toggler flex-shrink-0 d-lg-none ms-2 order-2 text-dark p-2" type="button"
-                            data-bs-toggle="collapse" data-bs-target="#navLinks">
-                            <i class="fas fa-bars fs-2" id="hamburger-icon"></i>
-                        </button>
-
-
-                    </div>
-
-                    <!-- Links below (collapses, hidden until hamburger clicked) -->
-                    <div class="nav-links text-reset text-dark navbar-collapse collapse pt-2 pt-lg-0" id="navLinks">
-                        <ul
-                            class="navbar-nav d-flex list-unstyled justify-content-center w-100 gap-2 gap-md-0 flex-column flex-lg-row mb-0">
-                            <li class="nav-item w-100 w-lg-auto p-ld-2 p-md-3 p-lg-5 flex-fill flex-lg-grow-0">
-                                <a href="index.html"
-                                    class="nav-link d-flex align-items-center justify-content-center gap-2 gap-md-3 h-100 text-decoration-none">
-                                    <div class="nav-link-icon-content">
-                                        <i class="fa-solid fs-3 fs-md-2 fa-grid-horizontal"></i>
-                                    </div>
-                                    <div class="nav-link-text-content fw-regular fs-5 fs-md-4">Dashboard</div>
-                                </a>
-                            </li>
-                            <li class="nav-item p-2 p-md-3 p-lg-5 flex-fill flex-lg-grow-0 nav-link-active">
-                                <a href="task.html"
-                                    class="nav-link d-flex align-items-center justify-content-center gap-2 gap-md-3 h-100 text-decoration-none">
-                                    <div class="nav-link-icon-content">
-                                        <i class="fa-solid fs-3 fs-md-2 fa-list-check"></i>
-                                    </div>
-                                    <div class="nav-link-text-content fw-regular fs-5 fs-md-4">Task</div>
-                                </a>
-                            </li>
-                            <li class="nav-item p-2 p-md-3 p-lg-5 flex-fill flex-lg-grow-0">
-                                <a href="calendar.html"
-                                    class="nav-link d-flex align-items-center justify-content-center gap-2 gap-md-3 h-100 text-decoration-none">
-                                    <div class="nav-link-icon-content">
-                                        <i class="fa-light fs-3 fs-md-2 fa-calendar-days"></i>
-                                    </div>
-                                    <div class="nav-link-text-content fw-light fs-5 fs-md-4">Calendar</div>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-
+                    </nav>
                 </div>
-            </nav>
+            </header>
+
+
         </div>
     </header>
-    <main class="main-content-container d-flex flex-column mx-5 gap-3">
+    <main class="main-content-container d-flex flex-column mx-3 mx-md-4 mx-lg-5 gap-3">
         <!-- a section for greeting and page heading -->
         <section class="greeting-section text-dark py-1 my-2 d-flex align-items-center justify-content-center">
             <div class="greeting-container">
@@ -142,8 +151,8 @@
 
             <div class="calendar-content">
                 <div class="row">
-                    <div class="col-md-8">
-                        <div class="big-calendar-container">
+                    <div class="col-md-12 col-lg-8 col-12 px-0">
+                        <div class="big-calendar-container mx-auto">
                             <div class="big-calendar-head-content d-flex flex-column gap-2">
                                 <div class="task-calendar-with-arrows-container">
                                     <div
@@ -165,154 +174,189 @@
                                     </div>
                                 </div>
                                 <div class="big-calendar-main-content d-flex flex-column align-items-center w-100">
-                                    <div class="big-calendar-row w-100 text-dark">
-                                        <div class="big-calendar-columns d-flex fw-bolder">
-                                            <div class="big-calendar-column-content">
-                                                <span>Mon</span>
+                                    <div class="big-calendar-row  text-dark">
+                                        <div class="big-calendar-columns d-flex fw-bolder text-center">
+                                            <div class="big-calendar-column-content flex-fill p-2 p-md-1 p-lg-2 ">
+                                                <span class="small text-nowrap d-block d-md-inline">Mon</span>
                                             </div>
-                                            <div class="big-calendar-column-content">
-                                                <span>Tue</span>
+                                            <div class="big-calendar-column-content flex-fill p-2 p-md-1 p-lg-2 ">
+                                                <span class="small text-nowrap d-block d-md-inline">Tue</span>
                                             </div>
-                                            <div class="big-calendar-column-content">
-                                                <span>Wed</span>
+                                            <div class="big-calendar-column-content flex-fill p-2 p-md-1 p-lg-2 ">
+                                                <span class="small text-nowrap d-block d-md-inline">Wed</span>
                                             </div>
-                                            <div class="big-calendar-column-content">
-                                                <span>Thu</span>
+                                            <div class="big-calendar-column-content flex-fill p-2 p-md-1 p-lg-2 ">
+                                                <span class="small text-nowrap d-block d-md-inline">Thu</span>
                                             </div>
-                                            <div class="big-calendar-column-content">
-                                                <span>Fri</span>
+                                            <div class="big-calendar-column-content flex-fill p-2 p-md-1 p-lg-2 ">
+                                                <span class="small text-nowrap d-block d-md-inline">Fri</span>
                                             </div>
-                                            <div class="big-calendar-column-content">
-                                                <span>Sat</span>
+                                            <div class="big-calendar-column-content flex-fill p-2 p-md-1 p-lg-2 ">
+                                                <span class="small text-nowrap d-block d-md-inline">Sat</span>
                                             </div>
-                                            <div class="big-calendar-column-content">
-                                                <span>Sun</span>
+                                            <div class="big-calendar-column-content flex-fill p-2 p-md-1 p-lg-2 ">
+                                                <span class="small text-nowrap d-block d-md-inline">Sun</span>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="big-calendar-date w-100 ">
-                                        <div class="big-calendar-row w-100">
-                                            <div class="big-calendar-columns d-flex">
-                                                <div class="big-calendar-column-content">
-                                                    <span></span>
+                                    <div class="big-calendar-date  ">
+                                        <div class="big-calendar-row ">
+                                            <div class="big-calendar-columns d-flex text-center">
+                                                <div
+                                                    class="big-calendar-column-content flex-fill p-1  p-lg-3 p-sm-1 p-md-3 gap-1">
+                                                    <span class="badge bg-light text-dark rounded-full fs-6 "></span>
                                                 </div>
-                                                <div class="big-calendar-column-content">
-                                                    <span>1</span>
+                                                <div
+                                                    class="big-calendar-column-content flex-fill p-1  p-lg-3 p-sm-1 p-md-3 gap-1">
+                                                    <span class="badge bg-light text-dark rounded-full fs-6 ">1</span>
                                                 </div>
-                                                <div class="big-calendar-column-content">
-                                                    <span>2</span>
+                                                <div
+                                                    class="big-calendar-column-content flex-fill p-1  p-lg-3 p-sm-1 p-md-3 gap-1">
+                                                    <span class="badge bg-light text-dark rounded-full fs-6 ">2</span>
                                                 </div>
-                                                <div class="big-calendar-column-content">
-                                                    <span>3</span>
+                                                <div
+                                                    class="big-calendar-column-content flex-fill p-1  p-lg-3 p-sm-1 p-md-3 gap-1">
+                                                    <span class="badge bg-light text-dark rounded-full fs-6 ">3</span>
                                                 </div>
-                                                <div class="big-calendar-column-content">
-                                                    <span>4</span>
+                                                <div
+                                                    class="big-calendar-column-content flex-fill p-1  p-lg-3 p-sm-1 p-md-3 gap-1">
+                                                    <span class="badge bg-light text-dark rounded-full fs-6 ">4</span>
                                                 </div>
-                                                <div class="big-calendar-column-content">
-                                                    <span>5</span>
+                                                <div
+                                                    class="big-calendar-column-content flex-fill p-1  p-lg-3 p-sm-1 p-md-3 gap-1">
+                                                    <span class="badge bg-light text-dark rounded-full fs-6 ">5</span>
                                                 </div>
-                                                <div class="big-calendar-column-content">
-                                                    <span>6</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="big-calendar-row w-100">
-                                            <div class="big-calendar-columns d-flex">
-                                                <div class="big-calendar-column-content">
-                                                    <span>7</span>
-                                                </div>
-                                                <div class="big-calendar-column-content">
-                                                    <span>8</span>
-                                                </div>
-                                                <div class="big-calendar-column-content">
-                                                    <span>9</span>
-                                                </div>
-                                                <div class="big-calendar-column-content">
-                                                    <span>10</span>
-                                                </div>
-                                                <div class="big-calendar-column-content">
-                                                    <span>11</span>
-                                                </div>
-                                                <div class="big-calendar-column-content">
-                                                    <span>12</span>
-                                                </div>
-                                                <div class="big-calendar-column-content">
-                                                    <span>13</span>
+                                                <div
+                                                    class="big-calendar-column-content flex-fill p-1  p-lg-3 p-sm-1 p-md-3 gap-1">
+                                                    <span class="badge bg-light text-dark rounded-full fs-6 ">6</span>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="big-calendar-row w-100">
+                                        <div class="big-calendar-row ">
                                             <div class="big-calendar-columns d-flex">
-                                                <div class="big-calendar-column-content">
-                                                    <span>14</span>
+                                                <div
+                                                    class="big-calendar-column-content flex-fill p-1  p-lg-3 p-sm-1 p-md-3 gap-1">
+                                                    <span class="badge bg-light text-dark rounded-full fs-6 ">7</span>
                                                 </div>
-                                                <div class="big-calendar-column-content">
-                                                    <span>15</span>
+                                                <div
+                                                    class="big-calendar-column-content flex-fill p-1  p-lg-3 p-sm-1 p-md-3 gap-1">
+                                                    <span class="badge bg-light text-dark rounded-full fs-6 ">8</span>
                                                 </div>
-                                                <div class="big-calendar-column-content">
-                                                    <span>16</span>
+                                                <div
+                                                    class="big-calendar-column-content flex-fill p-1  p-lg-3 p-sm-1 p-md-3 gap-1">
+                                                    <span class="badge bg-light text-dark rounded-full fs-6 ">9</span>
                                                 </div>
-                                                <div class="big-calendar-column-content">
-                                                    <span>17</span>
+                                                <div
+                                                    class="big-calendar-column-content flex-fill p-1  p-lg-3 p-sm-1 p-md-3 gap-1">
+                                                    <span class="badge bg-light text-dark rounded-full fs-6 ">10</span>
                                                 </div>
-                                                <div class="big-calendar-column-content">
-                                                    <span>18</span>
+                                                <div
+                                                    class="big-calendar-column-content flex-fill p-1  p-lg-3 p-sm-1 p-md-3 gap-1">
+                                                    <span class="badge bg-light text-dark rounded-full fs-6 ">11</span>
                                                 </div>
-                                                <div class="big-calendar-column-content">
-                                                    <span>19</span>
+                                                <div
+                                                    class="big-calendar-column-content flex-fill p-1  p-lg-3 p-sm-1 p-md-3 gap-1">
+                                                    <span class="badge bg-light text-dark rounded-full fs-6 ">12</span>
                                                 </div>
-                                                <div class="big-calendar-column-content">
-                                                    <span>20</span>
+                                                <div
+                                                    class="big-calendar-column-content flex-fill p-1  p-lg-3 p-sm-1 p-md-3 gap-1">
+                                                    <span class="badge bg-light text-dark rounded-full fs-6 ">13</span>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="big-calendar-row w-100">
+                                        <div class="big-calendar-row ">
                                             <div class="big-calendar-columns d-flex">
-                                                <div class="big-calendar-column-content">
-                                                    <span>21</span>
+                                                <div
+                                                    class="big-calendar-column-content flex-fill p-1  p-lg-3 p-sm-1 p-md-3 gap-1">
+                                                    <span class="badge bg-light text-dark rounded-full fs-6 ">14</span>
                                                 </div>
-                                                <div class="big-calendar-column-content">
-                                                    <span>22</span>
+                                                <div
+                                                    class="big-calendar-column-content flex-fill p-1  p-lg-3 p-sm-1 p-md-3 gap-1">
+                                                    <span class="badge bg-light text-dark rounded-full fs-6 ">15</span>
                                                 </div>
-                                                <div class="big-calendar-column-content">
-                                                    <span>23</span>
+                                                <div
+                                                    class="big-calendar-column-content flex-fill p-1  p-lg-3 p-sm-1 p-md-3 gap-1">
+                                                    <span class="badge bg-light text-dark rounded-full fs-6 ">16</span>
                                                 </div>
-                                                <div class="big-calendar-column-content">
-                                                    <span>24</span>
+                                                <div
+                                                    class="big-calendar-column-content flex-fill p-1  p-lg-3 p-sm-1 p-md-3 gap-1">
+                                                    <span class="badge bg-light text-dark rounded-full fs-6 ">17</span>
                                                 </div>
-                                                <div class="big-calendar-column-content">
-                                                    <span>25</span>
+                                                <div
+                                                    class="big-calendar-column-content flex-fill p-1  p-lg-3 p-sm-1 p-md-3 gap-1">
+                                                    <span class="badge bg-light text-dark rounded-full fs-6 ">18</span>
                                                 </div>
-                                                <div class="big-calendar-column-content">
-                                                    <span>26</span>
+                                                <div
+                                                    class="big-calendar-column-content flex-fill p-1  p-lg-3 p-sm-1 p-md-3 gap-1">
+                                                    <span class="badge bg-light text-dark rounded-full fs-6 ">19</span>
                                                 </div>
-                                                <div class="big-calendar-column-content">
-                                                    <span>27</span>
+                                                <div
+                                                    class="big-calendar-column-content flex-fill p-1  p-lg-3 p-sm-1 p-md-3 gap-1">
+                                                    <span class="badge bg-light text-dark rounded-full fs-6 ">20</span>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="big-calendar-row w-100 ">
+                                        <div class="big-calendar-row ">
                                             <div class="big-calendar-columns d-flex">
-                                                <div class="big-calendar-column-content">
-                                                    <span>28</span>
+                                                <div
+                                                    class="big-calendar-column-content flex-fill p-1  p-lg-3 p-sm-1 p-md-3 gap-1">
+                                                    <span class="badge bg-light text-dark rounded-full fs-6 ">21</span>
                                                 </div>
-                                                <div class="big-calendar-column-content">
-                                                    <span>29</span>
+                                                <div
+                                                    class="big-calendar-column-content flex-fill p-1  p-lg-3 p-sm-1 p-md-3 gap-1">
+                                                    <span class="badge bg-light text-dark rounded-full fs-6 ">22</span>
                                                 </div>
-                                                <div class="big-calendar-column-content">
-                                                    <span>30</span>
+                                                <div
+                                                    class="big-calendar-column-content flex-fill p-1  p-lg-3 p-sm-1 p-md-3 gap-1">
+                                                    <span class="badge bg-light text-dark rounded-full fs-6 ">23</span>
                                                 </div>
-                                                <div class="big-calendar-column-content">
-                                                    <span>31</span>
+                                                <div
+                                                    class="big-calendar-column-content flex-fill p-1  p-lg-3 p-sm-1 p-md-3 gap-1">
+                                                    <span class="badge bg-light text-dark rounded-full fs-6 ">24</span>
                                                 </div>
-                                                <div class="big-calendar-column-content">
-                                                    <span></span>
+                                                <div
+                                                    class="big-calendar-column-content flex-fill p-1  p-lg-3 p-sm-1 p-md-3 gap-1">
+                                                    <span class="badge bg-light text-dark rounded-full fs-6 ">25</span>
                                                 </div>
-                                                <div class="big-calendar-column-content">
-                                                    <span></span>
+                                                <div
+                                                    class="big-calendar-column-content flex-fill p-1  p-lg-3 p-sm-1 p-md-3 gap-1">
+                                                    <span class="badge bg-light text-dark rounded-full fs-6 ">26</span>
                                                 </div>
-                                                <div class="big-calendar-column-content">
-                                                    <span></span>
+                                                <div
+                                                    class="big-calendar-column-content flex-fill p-1  p-lg-3 p-sm-1 p-md-3 gap-1">
+                                                    <span class="badge bg-light text-dark rounded-full fs-6 ">27</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="big-calendar-row  ">
+                                            <div class="big-calendar-columns d-flex">
+                                                <div
+                                                    class="big-calendar-column-content flex-fill p-1  p-lg-3 p-sm-1 p-md-3 gap-1">
+                                                    <span class="badge bg-light text-dark rounded-full fs-6 ">28</span>
+                                                </div>
+                                                <div
+                                                    class="big-calendar-column-content flex-fill p-1  p-lg-3 p-sm-1 p-md-3 gap-1">
+                                                    <span class="badge bg-light text-dark rounded-full fs-6 ">29</span>
+                                                </div>
+                                                <div
+                                                    class="big-calendar-column-content flex-fill p-1  p-lg-3 p-sm-1 p-md-3 gap-1">
+                                                    <span class="badge bg-light text-dark rounded-full fs-6 ">30</span>
+                                                </div>
+                                                <div
+                                                    class="big-calendar-column-content flex-fill p-1  p-lg-3 p-sm-1 p-md-3 gap-1">
+                                                    <span class="badge bg-light text-dark rounded-full fs-6 ">31</span>
+                                                </div>
+                                                <div
+                                                    class="big-calendar-column-content flex-fill p-1  p-lg-3 p-sm-1 p-md-3 gap-1">
+                                                    <span class="badge bg-light text-dark rounded-full fs-6 "></span>
+                                                </div>
+                                                <div
+                                                    class="big-calendar-column-content flex-fill p-1  p-lg-3 p-sm-1 p-md-3 gap-1">
+                                                    <span class="badge bg-light text-dark rounded-full fs-6 "></span>
+                                                </div>
+                                                <div
+                                                    class="big-calendar-column-content flex-fill p-1  p-lg-3 p-sm-1 p-md-3 gap-1">
+                                                    <span class="badge bg-light text-dark rounded-full fs-6 "></span>
                                                 </div>
                                             </div>
                                         </div>
@@ -322,9 +366,9 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-12 col-4">
                         <div
-                            class="calendar-today-list-of-tasks-container my-3 mx-5 calendar-today-list-of-tasks-left-side-container h-100 py-3">
+                            class="calendar-today-list-of-tasks-container my-3 mx-4 calendar-today-list-of-tasks-left-side-container h-100 py-3">
                             <div class="calendar-today-lis-of-tasks-content">
                                 <div
                                     class="calendar-today-head-container d-flex justify-content-center align-items-center py-3">

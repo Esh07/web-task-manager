@@ -431,11 +431,14 @@ section.notes-container {
   border-radius: 0.75rem;
 }
 
-.task-head-calendar-blocks-container .task-calendar-block:nth-of-type(5) {
+.task-head-calendar-blocks-container .task-calendar-block.today-highlight {
   font-weight: 700;
   background-color: var(--bs-dark) !important;
+  color: var(--bs-white) !important;
 }
-.task-head-calendar-blocks-container .task-calendar-block:nth-of-type(5) span {
+.task-head-calendar-blocks-container
+  .task-calendar-block.today-highlight
+  .small-calendar-date-text {
   color: var(--bs-white) !important;
 }
 /* ======= end of task style ======== */
@@ -463,22 +466,22 @@ section.notes-container {
 }
 
 .big-calendar-row {
-  height: 2.5rem !important;
+  /* height: 2.5rem !important; */
   margin: 0.25rem 0;
   display: grid;
 }
 .big-calendar-date {
   background-color: var(--gray-background);
-  gap: 1rem;
+  /* gap: 1rem;
   display: grid;
-  padding: 2rem 0;
+  padding: 2rem 0; */
   border-radius: var(--border-radius-larger);
 }
 
 .big-calendar-row .big-calendar-columns,
 .big-calendar-date .big-calendar-row .big-calendar-columns {
   display: grid !important;
-  padding: 0 2rem;
+  /* padding: 0 2rem; */
   grid-template-columns: repeat(7, 0.15fr);
   text-align: center;
 }
@@ -870,6 +873,7 @@ section.notes-container {
 .small-calendar-date-content.today-highlight {
   background: var(--bs-dark) !important;
   border-radius: 0.5rem !important;
+  color: var(--bs-white) !important;
 }
 .small-calendar-date-content.today-highlight span {
   color: var(--bs-white) !important;
