@@ -7,6 +7,8 @@
 
 A simple web-based [task manager application](https://esh07.github.io/web-task-manager). The goal of this project is to help users in managing their daily task and organising tasks in a timely manner. In addition, the project was part of my university coursework for a module called User Interface Design and Evaluation. The course was primarily focused on project-based learning and understanding of user-centred design theories, principles, and processes.
 
+Module: <i>User Interface Design and Evaluation </i>
+
 ## Technology
 
   <ul type="none">
