@@ -102,9 +102,11 @@ The functionality that the current version of the web app has and is capable of:
 
 This app does not require any installation to use. Follow this [link](https://esh07.github.io/web-task-manager)
 
-## Project status
+## Project Status
 
-I'm still working on features that aren't finished.
+Portfolio prototype / coursework archive. Core task creation, editing, deletion, 
+and localStorage persistence are fully implemented. Some planned calendar and 
+profile features are scoped as future improvements.
 
 ## Credit
 
